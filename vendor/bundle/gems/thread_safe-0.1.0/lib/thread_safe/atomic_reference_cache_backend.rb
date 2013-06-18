@@ -106,7 +106,7 @@ module ThreadSafe
   # lock can stall, for example when user +eql?+ or mapping
   # functions take a long time.  However, statistically, under
   # random hash codes, this is not a common problem.  Ideally, the
-  # frequency of nodes in bins follows a Poisson distribution
+  # frequency of nodes in bins follows a Poisson distributions
   # (http://en.wikipedia.org/wiki/Poisson_distribution) with a
   # parameter of about 0.5 on average, given the resizing threshold
   # of 0.75, although with a large variance because of resizing

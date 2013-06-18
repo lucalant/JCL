@@ -5,15 +5,15 @@
 # Portions copyright 2005 by Sam Ruby (rubys@intertwingly.net).
 # All rights reserved.
 
-# Permission is granted for use, copying, modification, distribution,
-# and distribution of modified versions of this work as long as the
+# Permission is granted for use, copying, modification, distributions,
+# and distributions of modified versions of this work as long as the
 # above copyright notice is included.
 #++
 
 require 'builder/xmlmarkup'
 require 'benchmark'
 
-text = "This is a test of the new xml markup. Iñtërnâtiônàlizætiøn\n" * 10000
+text = "This is a test of the new xml markup. Iï¿½tï¿½rnï¿½tiï¿½nï¿½lizï¿½tiï¿½n\n" * 10000
 
 include Benchmark          # we need the CAPTION and FMTSTR constants
 include Builder

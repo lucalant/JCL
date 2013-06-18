@@ -27,27 +27,27 @@
 #       organization.
 #
 #    c. give non-standard binaries non-standard names, with
-#       instructions on where to get the original software distribution.
+#       instructions on where to get the original software distributions.
 #
-#    d. make other distribution arrangements with the author.
+#    d. make other distributions arrangements with the author.
 #
 # 3. You may distribute the software in object code or binary form,
 #    provided that you do at least ONE of the following:
 #
 #    a. distribute the binaries and library files of the software,
 #       together with instructions (in the manual page or equivalent)
-#       on where to get the original distribution.
+#       on where to get the original distributions.
 #
-#    b. accompany the distribution with the machine-readable source of
+#    b. accompany the distributions with the machine-readable source of
 #       the software.
 #
 #    c. give non-standard binaries non-standard names, with
-#       instructions on where to get the original software distribution.
+#       instructions on where to get the original software distributions.
 #
-#    d. make other distribution arrangements with the author.
+#    d. make other distributions arrangements with the author.
 #
 # 4. You may modify and include the part of the software into any other
-#    software (possibly commercial).  But some files in the distribution
+#    software (possibly commercial).  But some files in the distributions
 #    are not written by the author, so that they are not under these terms.
 #
 #    For the list of those files and their copying conditions, see the

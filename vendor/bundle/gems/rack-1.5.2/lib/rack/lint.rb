@@ -190,7 +190,7 @@ module Rack
       ## The server or the application can store their own data in the
       ## environment, too.  The keys must contain at least one dot,
       ## and should be prefixed uniquely.  The prefix <tt>rack.</tt>
-      ## is reserved for use with the Rack core distribution and other
+      ## is reserved for use with the Rack core distributions and other
       ## accepted specifications and must not be used otherwise.
       ##
 

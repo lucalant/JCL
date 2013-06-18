@@ -29,7 +29,7 @@ require 'rdoc/generator/markup'
 #
 # * Redistributions in binary form must reproduce the above copyright notice,
 #   this list of conditions and the following disclaimer in the documentation
-#   and/or other materials provided with the distribution.
+#   and/or other materials provided with the distributions.
 #
 # * Neither the name of the author/s, nor the names of the project's
 #   contributors may be used to endorse or promote products derived from this
