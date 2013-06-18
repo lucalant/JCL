@@ -11,3 +11,70 @@
  *= require_self
  *= require_tree .
  */
+
+* {
+    margin: 0;
+}
+
+html {
+    background: url(squairy_light.png);
+}
+
+body {
+    font-family: Verdana, Arial,"sans-serif";
+    color: #383550;
+    width: 960px;
+    margin: 0 auto;
+}
+
+a {
+    color: #403A6B;
+}
+
+a:link{
+    text-decoration: none;
+}
+
+#header {
+    background-color: #7E77B5;
+}
+
+#header h1 {
+    padding: 5px;
+}
+
+#header a {
+    color: #183545;
+    font-weight: bold;
+}
+
+#header a:hover {
+    color: #FFFFFF;
+}
+
+#header h1>a{
+    color: #FFFFFF;
+}
+
+#header nav ul {
+    list-style: none;
+    text-align: right;
+    padding-right: 5px;
+    padding-bottom: 5px;
+}
+
+#header nav ul>li {
+    display: inline;
+}
+
+#header nav ul > li + li {
+    border-left: 2px solid #183545;
+    padding-left: 5px;
+}
+
+#content {
+    position: relative;
+    padding: 5px;
+    background-color: #DFDFDF;
+}
+
