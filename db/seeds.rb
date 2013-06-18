@@ -7,7 +7,7 @@
 #   Mayor.create(name: 'Emanuel', city: cities)
 
 
-images = ['midnight.jpg', 'pes2009.jpg', 'rails.png', 'pes2009.jpg']
+#images = ['midnight.jpg', 'pes2009.jpg', 'rails.png', 'pes2009.jpg']
 
 
 Designer.delete_all
