@@ -53,4 +53,30 @@ JCLdesign::Application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
+  resources :designer, :only => [:index, :show, :new, :create]
+
+  resources :distribution, :only => [:index, :show, :new, :create]
+
+  resources :event, :only => [:index, :show, :new, :create]
+
+  resources :home_product, :only => [:index, :show, :new, :create]
+
+  resources :partner, :only => [:index, :show, :new, :create]
+
+  resources :service, :only => [:index, :show, :new, :create]
+
+  resources :top_client, :only => [:index, :show, :new, :create]
+
+  resources :workspace, :only => [:index, :show, :new, :create]
+
+
+
+
+
+  match 'home' => 'home#index', :via => :get
+  match 'admin' => 'admin#index', :via => :get, :as => :admins
+
+  root :to => 'home#index'
+
+
 end
