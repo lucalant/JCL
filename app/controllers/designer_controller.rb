@@ -4,4 +4,7 @@ class DesignerController < ApplicationController
 
   end
 
+
+  @events = .e_id
+
 end
