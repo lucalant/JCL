@@ -1,0 +1,268 @@
+/* #Media Queries
+================================================== */
+
+/* Smaller than standard 960 (devices and browsers) */
+@media only screen and (max-width: 959px) {
+
+    #nav{
+        display:none;
+    }
+    #main-nav{
+        right:10px;
+        margin-top:12px;
+    }
+    .responsive-menu{
+        display:block;
+        margin:0;
+        width:300px;
+    }
+
+    .flex-slider .flex-caption h1,
+    .flex-slider .flex-caption h2,
+    .flex-slider .flex-caption h3,
+    .flex-slider .flex-caption h4,
+    .flex-slider .flex-caption h5,
+    .flex-slider .flex-caption h6{
+        font-size:20px;
+    }
+
+    .flex-slider .flex-direction-nav a,
+    .post-slider .flex-direction-nav a{
+        background-position:-10px -10px;
+        width: 45px;
+        height: 45px;
+        margin-top:-25px;
+    }
+    .flex-slider .flex-direction-nav .flex-next,
+    .post-slider .flex-direction-nav .flex-next{
+        background-position:-75px -10px;
+    }
+
+    .flex-slider .flex-control-nav{
+        display:none;
+    }
+
+    #footer-wrap{
+        padding:40px 0 10px;
+    }
+
+    .flickr_badge_image{
+        margin:2px;
+        width:75px;
+        height:75px;
+    }
+
+}
+
+/* Bigger than standard 1200px (devices and browsers) */
+@media only screen and (min-width: 1200px) {
+
+    .asc-pricing.c2 .plan-container{ width:558px; }
+    .asc-pricing.c3 .plan-container{ width:371px; }
+    .asc-pricing.c4 .plan-container{ width:278px; }
+    .asc-pricing.c5 .plan-container{ width:222px; }
+
+    .asc-work .teaser,
+    .asc-work li,
+    .asc-blog .teaser{
+        width:258px !important;
+    }
+    .asc-blog li{
+        width:218px !important;
+    }
+
+    .asc-work-metro .work_one {
+        width:275px;
+        height:275px;
+    }
+    .asc-work-metro .work_two {
+        width:555px;
+        height:275px;
+    }
+    .asc-work-metro .work_one img {
+        max-width:100%;
+    }
+
+    .flickr_badge_image{
+        margin:2px;
+        width:75px;
+        height:75px;
+    }
+
+}
+
+/* Tablet Portrait size to standard 960 (devices and browsers) */
+@media only screen and (min-width: 768px) and (max-width: 959px) {
+
+    .flex-slider .flex-caption{
+        max-width:300px;
+    }
+
+    .zoom-hover.title{
+        font-size:22px;
+    }
+
+    #footer-wrap{
+        padding:30px 0 0;
+    }
+
+    .asc-work .teaser,
+    .asc-work li,
+    .asc-blog .teaser,
+    .asc-blog li{
+        margin-right:20px !important;
+    }
+
+    .asc-pricing.c2 .plan-container{ width:371px; }
+    .asc-pricing.c3 .plan-container{ width:247px; }
+    .asc-pricing.c4 .plan-container{ width:184px; }
+    .asc-pricing.c5 .plan-container{ width:184px; }
+
+    .asc-work-metro .work_one {
+        width:182px;
+        height:182px;
+    }
+    .asc-work-metro .work_two {
+        width:369px;
+        height:182px;
+    }
+    .asc-work-metro .work_one img {
+        max-width:100%;
+    }
+
+}
+
+/* All Mobile Sizes (devices and browser) */
+@media only screen and (max-width: 767px) {
+
+    #main{
+        margin-bottom:30px;
+    }
+
+    #header,
+    #main-nav{
+        position:relative;
+        right:0;
+        margin-top:0;
+    }
+
+    #header .header-inner{
+        height:auto;
+        padding:20px 0 !important;
+        text-align:center;
+    }
+    #header .logo{
+        float:none;
+        margin:0 0 10px;
+    }
+
+    #pre-content{
+        margin-top:0;
+    }
+
+    .flex-slider .flex-caption{
+        display:none;
+    }
+
+    #copyright{
+        line-height:25px;
+    }
+    #copyright .far-edge{
+        margin-top:0;
+        margin-bottom:0;
+        text-align:center;
+    }
+
+    .zoom-hover.title{
+        font-size:20px;
+    }
+
+    .secondary-menu{
+        text-align:inherit;
+    }
+
+    .breadcrumbs{
+        display:none;
+    }
+
+    #copyright{
+        text-align:center;
+    }
+    .scrollTop{
+        display:none !important;
+    }
+
+    .asc-pricing.c2 .plan-container,
+    .asc-pricing.c3 .plan-container,
+    .asc-pricing.c4 .plan-container,
+    .asc-pricing.c5 .plan-container{
+        width:298px;
+    }
+
+    .asc-tabs .tabs-title li{
+        display:block;
+        float:none;
+        border-top:1px solid #fff;
+        border-bottom:1px solid #e9e9e9;
+    }
+
+    .asc-work .teaser,
+    .asc-blog .teaser{
+        width:300px;
+        float:none;
+    }
+    .asc-work li,
+    .asc-blog li{
+        margin-right:20px !important;
+    }
+    .asc-work-metro .work_one {
+        width:145px;
+        height:145px;
+    }
+    .asc-work-metro .work_two {
+        width:295px;
+        height:145px;
+    }
+    .asc-work-metro .work_one img {
+        max-width:100%;
+    }
+
+}
+
+/* Mobile Landscape Size to Tablet Portrait (devices and browsers) */
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+
+    .responsive-menu{
+        display:block;
+        width:420px;
+    }
+
+    #copyright{
+        text-align:center;
+    }
+
+    .asc-pricing.c2 .plan-container,
+    .asc-pricing.c3 .plan-container,
+    .asc-pricing.c4 .plan-container,
+    .asc-pricing.c5 .plan-container{
+        width:418px;
+    }
+
+    .asc-work .teaser,
+    .asc-blog .teaser{
+        width:420px;
+        float:none;
+    }
+    .asc-work-metro .work_one {
+        width:205px;
+        height:205px;
+    }
+    .asc-work-metro .work_two {
+        width:415px;
+        height:205px;
+    }
+    .asc-work-metro .work_one img {
+        max-width:100%;
+    }
+
+}

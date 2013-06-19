@@ -1,0 +1,328 @@
+/* Table of Contents
+==================================================
+    #Base 960 Grid
+    #Full Browser 1152 Grid
+    #Tablet (Portrait)
+    #Mobile (Portrait)
+    #Mobile (Landscape)
+    #Clearing */
+
+
+
+/* #Base 960 Grid
+================================================== */
+
+.container                                  { position: relative; width: 960px; margin: 0 auto; padding: 0; }
+.container .column,
+.container .columns                         { float: left; display: inline; margin-left: 15px; margin-right: 15px; }
+.row                                        { margin-bottom: 20px; }
+
+/* Nested Column Classes */
+.column.alpha, .columns.alpha               { margin-left: 0; }
+.column.omega, .columns.omega               { margin-right: 0; }
+
+/* Base Grid */
+.container .one.column,
+.container .one.columns                     { width: 30px;  }
+.container .two.columns                     { width: 90px; 	}
+.container .three.columns                   { width: 150px; }
+.container .four.columns                    { width: 210px; }
+.container .five.columns                    { width: 270px; }
+.container .six.columns                     { width: 330px; }
+.container .seven.columns                   { width: 390px; }
+.container .eight.columns                   { width: 450px; }
+.container .nine.columns                    { width: 510px; }
+.container .ten.columns                     { width: 570px; }
+.container .eleven.columns                  { width: 630px; }
+.container .twelve.columns                  { width: 690px; }
+.container .thirteen.columns                { width: 750px; }
+.container .fourteen.columns                { width: 810px; }
+.container .fifteen.columns                 { width: 870px; }
+.container .sixteen.columns                 { width: 930px; }
+
+.container .one-third.column                { width: 290px; }
+.container .two-thirds.column               { width: 610px; }
+
+/* AzureThemes */
+#azure-wrapper						{}
+#main.right							{ float: right; }
+#sidebar.left						{ float: left; }
+
+.content .one_half 					{ width: 450px; }
+.content .one_third 				{ width: 290px; }
+.content .two_third 				{ width: 610px; }
+.content .one_fourth 				{ width: 210px; }
+.content .three_fourth 				{ width: 690px; }
+.content-part .one_half 			{ width: 330px; }
+.content-part .one_third 			{ width: 210px; }
+.content-part .two_third 			{ width: 450px; }
+.content-part .one_fourth 			{ width: 150px; }
+.content-part .three_fourth 		{ width: 510px; }
+
+.one_half, .one_third, .two_third, .one_fourth, .three_fourth {
+    position: relative;
+    margin-right: 30px;
+    float: left;
+}
+.one_half.last, .one_third.last, .two_third.last, .one_fourth.last, .three_fourth.last {
+    margin-right: 0 !important;
+}
+
+
+
+/* #Full Browser 1152 Grid
+================================================== */
+
+/* Note: Design for a width of 1152px */
+
+@media only screen and (min-width: 1200px) {
+    .container                                  { width: 1152px; }
+
+    .container .one.column,
+    .container .one.columns                     { width: 42px; }
+    .container .two.columns                     { width: 114px; }
+    .container .three.columns                   { width: 186px; }
+    .container .four.columns                    { width: 258px; }
+    .container .five.columns                    { width: 330px; }
+    .container .six.columns                     { width: 402px; }
+    .container .seven.columns                   { width: 474px; }
+    .container .eight.columns                   { width: 546px; }
+    .container .nine.columns                    { width: 618px; }
+    .container .ten.columns                     { width: 690px; }
+    .container .eleven.columns                  { width: 762px; }
+    .container .twelve.columns                  { width: 834px; }
+    .container .thirteen.columns                { width: 906px; }
+    .container .fourteen.columns                { width: 978px; }
+    .container .fifteen.columns                 { width: 1050px; }
+    .container .sixteen.columns                 { width: 1122px; }
+
+    .container .one-third.column                { width: 354px; }
+    .container .two-thirds.column               { width: 738px; }
+
+    /* AzureThemes */
+    #azure-wrapper						{}
+
+    .content .one_half 					{ width: 546px; }
+    .content .one_third 				{ width: 354px; }
+    .content .two_third 				{ width: 738px; }
+    .content .one_fourth 				{ width: 258px; }
+    .content .three_fourth 				{ width: 834px; }
+    .content-part .one_half 			{ width: 402px; }
+    .content-part .one_third 			{ width: 258px; }
+    .content-part .two_third 			{ width: 546px; }
+    .content-part .one_fourth 			{ width: 186px; }
+    .content-part .three_fourth 		{ width: 618px; }
+
+    input[type="text"],
+    input[type="password"],
+    input[type="email"],
+    textarea,
+    select								{ width: 95%; }
+
+}
+
+
+
+/* #Tablet (Portrait)
+================================================== */
+
+/* Note: Design for a width of 768px */
+
+@media only screen and (min-width: 768px) and (max-width: 959px) {
+    .container                                  { width: 768px; }
+    .container .column,
+    .container .columns                         { margin-left: 10px; margin-right: 10px;  }
+    .column.alpha, .columns.alpha               { margin-left: 0; margin-right: 10px; }
+    .column.omega, .columns.omega               { margin-right: 0; margin-left: 10px; }
+    .alpha.omega                                { margin-left: 0; margin-right: 0; }
+
+    .container .one.column,
+    .container .one.columns                     { width: 28px; }
+    .container .two.columns                     { width: 76px; }
+    .container .three.columns                   { width: 124px; }
+    .container .four.columns                    { width: 172px; }
+    .container .five.columns                    { width: 220px; }
+    .container .six.columns                     { width: 268px; }
+    .container .seven.columns                   { width: 316px; }
+    .container .eight.columns                   { width: 364px; }
+    .container .nine.columns                    { width: 412px; }
+    .container .ten.columns                     { width: 460px; }
+    .container .eleven.columns                  { width: 508px; }
+    .container .twelve.columns                  { width: 556px; }
+    .container .thirteen.columns                { width: 604px; }
+    .container .fourteen.columns                { width: 652px; }
+    .container .fifteen.columns                 { width: 700px; }
+    .container .sixteen.columns                 { width: 748px; }
+
+    .container .one-third.column                { width: 236px; }
+    .container .two-thirds.column               { width: 492px; }
+
+    /* AzureThemes */
+    #azure-wrapper						{}
+
+    .content .one_half 					{ width: 364px; }
+    .content .one_third 				{ width: 236px; }
+    .content .two_third 				{ width: 492px; }
+    .content .one_fourth 				{ width: 172px; }
+    .content .three_fourth 				{ width: 556px; }
+    .content-part .one_half 			{ width: 268px; }
+    .content-part .one_third 			{ width: 172px; }
+    .content-part .two_third 			{ width: 364px; }
+    .content-part .one_fourth 			{ width: 124px; }
+    .content-part .three_fourth 		{ width: 412px; }
+
+    .one_half, .one_third, .two_third, .one_fourth, .three_fourth {
+        position: relative;
+        margin-right: 20px;
+        float: left;
+    }
+
+    input[type="text"],
+    input[type="password"],
+    input[type="email"],
+    textarea,
+    select								{ width: 95%; }
+
+}
+
+
+/*  #Mobile (Portrait)
+================================================== */
+
+/* Note: Design for a width of 320px */
+
+@media only screen and (max-width: 767px) {
+    .container { width: 300px; }
+    .container .columns,
+    .container .column { margin: 0; }
+
+    .container .one.column,
+    .container .one.columns,
+    .container .two.columns,
+    .container .three.columns,
+    .container .four.columns,
+    .container .five.columns,
+    .container .six.columns,
+    .container .seven.columns,
+    .container .eight.columns,
+    .container .nine.columns,
+    .container .ten.columns,
+    .container .eleven.columns,
+    .container .twelve.columns,
+    .container .thirteen.columns,
+    .container .fourteen.columns,
+    .container .fifteen.columns,
+    .container .sixteen.columns,
+    .container .one-third.column,
+    .container .two-thirds.column  { width: 300px; }
+
+    /* AzureThemes */
+    #azure-wrapper						{}
+    #main.right							{ float: none; }
+    #sidebar.left						{ float: none; }
+
+    .content .one_half,
+    .content .one_third,
+    .content .two_third,
+    .content .one_fourth,
+    .content .three_fourth,
+    .content-part .one_half,
+    .content-part .one_third,
+    .content-part .two_third,
+    .content-part .one_fourth,
+    .content-part .three_fourth 		{ width: 300px; }
+
+    .one_half, .one_third, .two_third, .one_fourth, .three_fourth {
+        margin: 0 0 20px;
+    }
+
+    input[type="text"],
+    input[type="password"],
+    input[type="email"],
+    textarea,
+    select								{ width: 95%; }
+
+}
+
+
+/* #Mobile (Landscape)
+================================================== */
+
+/* Note: Design for a width of 480px */
+
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+    .container { width: 420px; }
+    .container .columns,
+    .container .column { margin: 0; }
+
+    .container .one.column,
+    .container .one.columns,
+    .container .two.columns,
+    .container .three.columns,
+    .container .four.columns,
+    .container .five.columns,
+    .container .six.columns,
+    .container .seven.columns,
+    .container .eight.columns,
+    .container .nine.columns,
+    .container .ten.columns,
+    .container .eleven.columns,
+    .container .twelve.columns,
+    .container .thirteen.columns,
+    .container .fourteen.columns,
+    .container .fifteen.columns,
+    .container .sixteen.columns,
+    .container .one-third.column,
+    .container .two-thirds.column { width: 420px; }
+
+    /* AzureThemes */
+    #azure-wrapper						{}
+
+    .content .one_half,
+    .content .one_third,
+    .content .two_third,
+    .content .one_fourth,
+    .content .three_fourth,
+    .content-part .one_half,
+    .content-part .one_third,
+    .content-part .two_third,
+    .content-part .one_fourth,
+    .content-part .three_fourth 		{ width: 420px; }
+
+}
+
+
+/* #Clearing
+================================================== */
+
+/* Self Clearing Goodness */
+.container:after { content: "\0020"; display: block; height: 0; clear: both; visibility: hidden; }
+
+/* Use clearfix class on parent to clear nested columns,
+or wrap each row of columns in a <div class="row"> */
+.clearfix:before,
+.clearfix:after,
+.row:before,
+.row:after {
+    content: '\0020';
+    display: block;
+    overflow: hidden;
+    visibility: hidden;
+    width: 0;
+    height: 0; }
+.row:after,
+.clearfix:after {
+    clear: both; }
+.row,
+.clearfix {
+    zoom: 1; }
+
+/* You can also use a <br class="clear" /> to clear columns */
+.clear {
+    clear: both;
+    display: block;
+    overflow: hidden;
+    visibility: hidden;
+    width: 0;
+    height: 0;
+}
