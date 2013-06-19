@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 20130618151719) do
     t.string   "img_url"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.datetime "designer_id"
   end
 
   create_table "distributions", force: true do |t|
@@ -44,6 +45,7 @@ ActiveRecord::Schema.define(version: 20130618151719) do
     t.string   "introduction"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.datetime "home_product_id"
   end
 
   create_table "partners", force: true do |t|
@@ -63,7 +65,7 @@ ActiveRecord::Schema.define(version: 20130618151719) do
     t.datetime "updated_at"
   end
 
-  create_table "top_c_lients", force: true do |t|
+  create_table "top_clients", force: true do |t|
     t.string   "name"
     t.string   "surname"
     t.string   "img_url"
@@ -78,6 +80,7 @@ ActiveRecord::Schema.define(version: 20130618151719) do
     t.string   "text"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.datetime "workspace_id"
   end
 
 end
