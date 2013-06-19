@@ -1,0 +1,63 @@
+/* Elastislide Style */
+.es-carousel-wrapper{
+    position:relative;
+    /*padding:0 0 20px;*/
+    overflow:hidden;
+}
+.es-carousel{
+    overflow:hidden;
+    /*margin-bottom:20px;*/
+}
+.es-carousel:after{
+    content:'';
+    display:block;
+    clear:both;
+}
+.es-carousel ul{
+    display:block;
+    margin:0;
+    overflow:hidden;
+}
+.es-carousel ul li{
+    float:left;
+    display:block;
+    margin-bottom:0;
+}
+.es-carousel ul li a{
+}
+.es-carousel ul li a img{
+    display:block;
+    border:none;
+    max-height:100%;
+    max-width:100%;
+}
+.es-carousel p{
+    line-height: 22px;
+}
+
+.es-nav{
+    display:block;
+    margin-top:20px;
+}
+.es-nav span.es-nav-next, .es-nav span.es-nav-prev{
+    width:30px;
+    height:30px;
+    margin:1px;
+    display:block;
+    text-indent:-9999px;
+    cursor:pointer;
+}
+.es-nav span.es-nav-prev{
+    background: url(elastislide-left.png) no-repeat center #00ADEE;
+    float:left;
+}
+.es-nav span.es-nav-next{
+    background: url(elastislide-right.png) no-repeat center #00ADEE;
+    float:left;
+}
+.es-nav span.es-nav-next:hover, .es-nav span.es-nav-prev:hover{
+    background-color:#666;
+}
+.es-nav span.es-nav-next.stop, .es-nav span.es-nav-prev.stop{
+    background-color:#f4f4f4;
+}
