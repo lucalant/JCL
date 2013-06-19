@@ -4,6 +4,7 @@ class CreateWorkspaces < ActiveRecord::Migration
       t.string :presentation
       t.string :img_url
       t.string :text
+      t.integer :did
 
       t.timestamps
     end

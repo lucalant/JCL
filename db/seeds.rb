@@ -18,7 +18,12 @@ Designers = Designer.create([{name: 'xbox', surname: 'Microsoft console', descri
                              {name: 'xbox', surname: 'Microsoft console', description: 'description', image_url: 'xbox.jpeg', created_at: 01012013, updated_at: '01023012'}
                             ])
 
-
+events = Event.create([{name: '', about: '', video:, img_url: ''}, {name: '', about: '', video:, img_url: ''}, {name: '', about: '', video:, img_url: ''}])
+string "about"
+t.text "video"
+t.string "img_url"
+t.datetime "created_at"
+t.datetime "updated_at"
 #Game.delete_all
 #10.times {|i|
 #  g = Game.new title: "titolo_#{i}", description: "Desc",

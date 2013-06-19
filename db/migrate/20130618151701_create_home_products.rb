@@ -4,6 +4,7 @@ class CreateHomeProducts < ActiveRecord::Migration
       t.string :images
       t.string :text
       t.string :introduction
+      t.integer :did
 
       t.timestamps
     end
