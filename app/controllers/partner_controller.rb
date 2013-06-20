@@ -1,7 +1,10 @@
 class PartnerController < ApplicationController
-
-  def index
-
+  def introduction
   end
 
+  def images
+  end
+
+  def contacts
+  end
 end
