@@ -4,7 +4,7 @@ class CreateEvents < ActiveRecord::Migration
       t.string :about
       t.text :video
       t.string :img_url
-      t.integer :did
+      t.integer :event_id
 
       t.timestamps
     end

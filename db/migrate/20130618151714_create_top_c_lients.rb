@@ -5,6 +5,7 @@ class CreateTopCLients < ActiveRecord::Migration
       t.string :surname
       t.string :img_url
       t.string :about
+      t.integer :top_client_id
 
       t.timestamps
     end

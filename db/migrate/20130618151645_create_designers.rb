@@ -7,6 +7,7 @@ class CreateDesigners < ActiveRecord::Migration
       t.string :img_url
       t.integer :home_product_id
       t.integer :workspace_id
+      t.integer :designer_id
 
       t.timestamps
     end

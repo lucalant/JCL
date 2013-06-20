@@ -31,6 +31,7 @@ ActiveRecord::Schema.define(version: 20130618151719) do
     t.string   "map"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer "distribution_id"
     t.integer "w_id"
     t.integer "hp_id"
   end
@@ -41,6 +42,7 @@ ActiveRecord::Schema.define(version: 20130618151719) do
     t.string   "img_url"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer "event_id"
   end
 
   create_table "home_products", force: true do |t|
@@ -51,7 +53,7 @@ ActiveRecord::Schema.define(version: 20130618151719) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer "home_product_id"
-    t.integer "distribution_id"
+
   end
 
   create_table "partners", force: true do |t|
@@ -61,6 +63,7 @@ ActiveRecord::Schema.define(version: 20130618151719) do
     t.string   "contact"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer "partner_id"
   end
 
   create_table "services", force: true do |t|
@@ -69,6 +72,7 @@ ActiveRecord::Schema.define(version: 20130618151719) do
     t.string   "type"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer "service_id"
   end
 
   create_table "top_clients", force: true do |t|
@@ -78,6 +82,7 @@ ActiveRecord::Schema.define(version: 20130618151719) do
     t.string   "about"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer "top_client_id"
   end
 
   create_table "workspaces", force: true do |t|
@@ -88,7 +93,7 @@ ActiveRecord::Schema.define(version: 20130618151719) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer "workspace_id"
-    t.integer "distribution_id"
+
   end
 
 end

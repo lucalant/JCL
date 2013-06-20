@@ -5,6 +5,7 @@ class CreatePartners < ActiveRecord::Migration
       t.text :description
       t.string :img_url
       t.string :contact
+      t.integer :partner_id
 
       t.timestamps
     end

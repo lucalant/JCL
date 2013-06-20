@@ -4,6 +4,7 @@ class CreateServices < ActiveRecord::Migration
       t.string :description
       t.string :img_url
       t.string :type
+      t.integer :service_id
 
       t.timestamps
     end
