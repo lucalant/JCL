@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130620111248) do
+ActiveRecord::Schema.define(version: 20130620125113) do
 
   create_table "designers", force: true do |t|
     t.string   "name"
@@ -52,6 +52,7 @@ ActiveRecord::Schema.define(version: 20130620111248) do
     t.integer "top_client_id"
     t.integer "eid"
     t.integer "pid"
+    
   end
 
   create_table "partners", force: true do |t|
