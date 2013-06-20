@@ -45,13 +45,13 @@
 /*=========================================================================
   Header
 //=======================================================================*/
-#header{
-    position:fixed;
-    top:0;
-    width:100%;
-    background-color:#222;
-    z-index:999;
-    border-bottom:3px solid #00ADEE;
+#header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #222;
+    z-index: 999;
+    border-bottom: 3px solid #00ADEE;
 }
 #header .header-inner{
     height:60px;
@@ -201,7 +201,6 @@ input[type="text"]:focus, input[type="password"]:focus, input[type="email"]:focu
   Navigation
 //=======================================================================*/
 #main-nav{
-    position:absolute;
     right:15px;
     top:0;
     z-index:999;
@@ -221,6 +220,7 @@ input[type="text"]:focus, input[type="password"]:focus, input[type="email"]:focu
     margin:0;
     display:block;
 }
+
 #main-nav ul li a{
     text-transform: uppercase;
     padding:9px 15px 8px;
