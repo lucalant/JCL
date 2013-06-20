@@ -5,7 +5,7 @@ class CreateWorkspaces < ActiveRecord::Migration
       t.string :img_url
       t.string :text
       t.integer :did
-      t.integer :distribution_id
+      t.integer :workspace_id
 
       t.timestamps
     end

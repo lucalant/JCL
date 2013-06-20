@@ -4,8 +4,8 @@ class CreateDistributions < ActiveRecord::Migration
       t.string :presentation
       t.string :img_url
       t.string :map
-      t.integer :w_id
-      t.integer :hp_id
+      t.integer :distribution_id
+
 
       t.timestamps
     end
