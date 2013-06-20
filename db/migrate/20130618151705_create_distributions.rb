@@ -5,6 +5,7 @@ class CreateDistributions < ActiveRecord::Migration
       t.string :img_url
       t.string :map
       t.integer :distribution_id
+      t.integer :type
 
 
       t.timestamps

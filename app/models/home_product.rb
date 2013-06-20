@@ -1,5 +1,5 @@
 class HomeProduct < ActiveRecord::Base
-  attr_accessible :name,:introduction,:images,:text ,:home_product_id  ,:did,:top_client_id,:eid,:pid
+  attr_accessible :name,:introduction,:images,:text ,:home_product_id  ,:did,:top_client_id,:eid,:pid ,:room
 
 
   belongs_to :designer,foreign_key: 'did',:autosave => true
