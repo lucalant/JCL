@@ -1,5 +1,6 @@
 JCLdesign::Application.routes.draw do
 
+  get "home/index"
   get "workspace/collections"
   get "workspace/new"
   get "workspace/top"
