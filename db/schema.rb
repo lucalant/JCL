@@ -50,6 +50,8 @@ ActiveRecord::Schema.define(version: 20130620111248) do
     t.datetime "updated_at"
     t.integer "did"
     t.integer "top_client_id"
+    t.integer "eid"
+    t.integer "pid"
   end
 
   create_table "partners", force: true do |t|
@@ -90,6 +92,8 @@ ActiveRecord::Schema.define(version: 20130620111248) do
     t.datetime "updated_at"
     t.integer "did"
     t.integer "top_client_id"
+    t.integer "eid"
+    t.integer "pid"
   end
 
 end

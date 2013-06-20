@@ -11,3 +11,4 @@ class CreatePartners < ActiveRecord::Migration
     end
   end
 end
+
