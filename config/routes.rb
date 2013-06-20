@@ -1,47 +1,11 @@
 JCLdesign::Application.routes.draw do
 
-  get "login/index"
-  get "press/news"
   get "press/magazine"
-  get "faq/text"
+  get "press/news"
   get "faq/form"
-  get "contact/text"
+  get "faq/text"
   get "contact/map"
-  get "admin/index"
-  get "admin/designer"
-  get "admin/distribution"
-  get "admin/event"
-  get "admin/homeProduct"
-  get "admin/partner"
-  get "admin/service"
-  get "admin/topClient"
-  get "admin/workspace"
-  get "admin/company"
-  get "home/index"
-  get "workspace/collections"
-  get "workspace/new"
-  get "workspace/top"
-  get "top_client/index"
-  get "service/assistance"
-  get "service/interiorDesign"
-  get "service/Repair"
-  get "service/Personalization"
-  get "partner/introduction"
-  get "partner/images"
-  get "partner/contacts"
-  get "home_product/index"
-  get "home_product/top"
-  get "home_product/new"
-  get "home_product/types"
-  get "home_product/rooms"
-  get "event/index"
-  get "event/media"
-  get "distribution/index"
-  get "distribution/map"
-  get "designer/index"
-  get "designer/works"
-  get "company/history"
-  get "company/identity"
+  get "contact/text"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -96,31 +60,37 @@ JCLdesign::Application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
-  resources :designer, :only => [:index, :show, :new, :create]
 
-  resources :distribution, :only => [:index]
+  resources :designer, :only => [:index, :works]
 
-  resources :event, :only => [:index, :show, :new, :create]
+  resources :distribution, :only => [:index, :map]
 
-  resources :home_product, :only => [:index, :new, :top, :types, :show]
+  resources :event, :only => [:index, :media]
+
+  resources :home_product, :only => [:index, :new, :top, :types, :type, :rooms, :room]
 
   resources :partner, :only => [:index, :images, :introduction, :contacts]
 
-  resources :service, :only => [:index, :show, :new, :create]
+  resources :service, :only => [:assistance, :interior_design, :personalization, :repair, :show]
 
-  resources :top_client, :only => [:index, :show, :new, :create]
+  resources :top_client, :only => [:index]
 
-  resources :workspace, :only => [:index, :collections, :new, :top]
+  resources :workspace, :only => [:presentation, :images, :new, :top, :images, :presentation, :collections, :collection]
 
   resources :company, :only => [:history, :identity]
+
+  resources :press, :only => [:news, :magazine]
+
+  resources :faq, :only => [:text]
+
+  resources :contact, :only => [:text]
+
 
 
 
   match 'home' => 'home#index', :via => :get
   match 'admin' => 'admin#index', :via => :get, :as => :admins
 
-
-  match 'company' => 'company#history', :via => :get
   match 'identity' => 'company#identity', :via => :get
   match 'history' => 'company#history', :via => :get
 
@@ -129,38 +99,29 @@ JCLdesign::Application.routes.draw do
   match 'contacts_partner' => 'partner#contacts', :via => :get
   match 'images_partner' => 'partner#images', :via => :get
 
-  match 'workspace' => 'workspace#index', :via => :get
-  match 'collections' => 'workspace#collections', :via => :get
+  match 'workspace' => 'workspace#presentation', :via => :get
+  match 'collection' => 'workspace#collection', :via => :get
   match 'new_workspace' => 'workspace#new', :via => :get
   match 'top_workspace' => 'workspace#top', :via => :get
 
-  match 'homeproducts' => 'home_product#show', :via => :get
-  match 'top_homeproducts' => 'home_product#top', :via => :get
-  match 'new_homeproducts' => 'home_product#new', :via => :get
-  match 'types_homeproducts' => 'home_product#types', :via => :get
-  match 'rooms_homeproducts' => 'home_product#rooms', :via => :get
+
+  match 'top_home_products' => 'home_product#top', :via => :get
+  match 'new_home_products' => 'home_product#new', :via => :get
+  match 'type_home_products' => 'home_product#type', :via => :get
+  match 'room_home_products' => 'home_product#room', :via => :get
 
   match 'designers' => 'designer#index', :via => :get
 
-  match 'services' => 'service#index', :via => :get
-  match 'assistance' => 'service#assistance', :via => :get
-  match 'interior_design' => 'service#interior', :via => :get
-  match 'repair' => 'service#repair', :via => :get
-  match 'personalization' => 'service#personalization', :via => :get
+  match 'services' => 'service#show', :via => :get
 
   match 'distribution' => 'distribution#index', :via => :get
-  match 'retail_shops' => 'distribution#retailshops', :via => :get
-  match 'showrooms' => 'distribution#showrooms', :via => :get
-  match 'assistance_points' => 'distribution#assistancepoints', :via => :get
-
-  match 'faq' => 'util#faq', :via => :get
-  match 'contacts' => 'util#contacts', :via => :get
-  match 'log_in' => 'util#login', :via => :get
-  match 'press' => 'util#press', :via => :get
-  match 'news' => 'util#news', :via => :get
-  match 'magazine' => 'util#magazine', :via => :get
 
   match 'events' => 'event#index', :via => :get
+
+  match 'faq' => 'faq#text', :via => :get
+  match 'contacts' => 'contact#text', :via => :get
+  match 'news' => 'press#news', :via => :get
+  match 'magazine' => 'press#magazine', :via => :get
 
 
   root :to => 'home#index'

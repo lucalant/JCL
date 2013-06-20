@@ -456,7 +456,7 @@ a.more-link{
     padding:15px;
 }
 .asc-frame:before{
-    content: url(../images/frame-top.png);
+
     display: block;
     height: 45px;
     left: -12px;
@@ -465,7 +465,7 @@ a.more-link{
     width: 45px;
 }
 .asc-frame:after{
-    content: url(../images/frame-bottom.png);
+
     display: block;
     height: 45px;
     right: -12px;

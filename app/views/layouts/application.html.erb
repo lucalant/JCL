@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html xmlns="http://www.w3.org/1999/html">
 <head>
   <title>JCLdesign</title>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
@@ -10,98 +10,101 @@
 
 <div id="header">
   <div class="container">
-    <div class="logo">
-      <img src="http://www.lant.it/wp-content/uploads/2013/05/logo1.png" alt="JCL_InteriorDesign"> <% link_to 'JCLDesign', home_path %>
-    </div>
-  <nav id="main-nav">
-      <ul id="nav">
-        <li><%= link_to 'Company', company_path %>
-          <ul class="sub-menu" style="display: none;">
-            <li><%= link_to 'Identity', identity_path %></li>
-            <li><%= link_to 'History', history_path %></li>
-          </ul>
-        </li>
-        <li><%= link_to 'Partners', partners_path %>
-          <ul class="sub-menu" style="display: none;">
-            <li><%= link_to 'Introduction', introduction_partner_path %></li>
-            <li><%= link_to 'Images', images_partner_path %></li>
-            <li><%= link_to 'Contacts', contacts_partner_path %></li>
-          </ul>
-        </li>
-        <li><%= link_to 'Workspace', workspace_path %>
-          <ul class="sub-menu" style="display: none;">
-            <li><%= link_to 'Collections', collections_path %>
-              <ul class="sub-menu">
-                <li><%= link_to 'Classic', collections_path %></li>
-                <li><%= link_to 'Soft', collections_path %></li>
-              </ul>
-            </li>
-            <li><%= link_to 'New', new_workspace_path %></li>
-            <li><%= link_to 'Top', top_workspace_path %></li>
-          </ul>
-        </li>
-        <li><a>Home Products</a>
-          <ul class="sub-menu" style="display: none;">
-            <li><%= link_to 'Top', top_homeproducts_path %></li>
-            <li><%= link_to 'New', new_homeproducts_path %></li>
-            <li><%= link_to 'Types', types_homeproducts_path %>
-              <ul class="sub-menu">
-                <li><%= link_to 'Sofas and Armchairs', homeproducts_path(:id) %></li>
-                <li><%= link_to 'Night Furniture', homeproducts_path(:id) %></li>
-                <li><%= link_to 'Beds', homeproducts_path(:id) %></li>
-                <li><%= link_to 'Closets', homeproducts_path(:id) %></li>
-                <li><%= link_to 'Chairs', homeproducts_path(:id) %></li>
-                <li><%= link_to 'Systems', homeproducts_path(:id) %></li>
-                <li><%= link_to 'Tables', homeproducts_path(:id) %></li>
-                <li><%= link_to 'Single Furniture', homeproducts_path(:id) %></li>
-                <li><%= link_to 'Lamps', homeproducts_path(:id) %></li>
-                <li><%= link_to 'Fittings', homeproducts_path(:id) %></li>
-              </ul>
-            </li>
-            <li><%= link_to 'Rooms', rooms_homeproducts_path %>
-              <ul class="sub-menu">
-                <li><%= link_to 'Bedroom', homeproducts_path %></li>
-                <li><%= link_to 'Dining Room', homeproducts_path(:id) %></li>
-                <li><%= link_to 'Studio', homeproducts_path(:id) %></li>
-                <li><%= link_to 'Living Room', homeproducts_path(:id) %></li>
-                <li><%= link_to 'Loft', homeproducts_path(:id) %></li>
-              </ul>
-            </li>
-          </ul>
-        </li>
-        <li><%= link_to 'Designers', designers_path %></li>
-        <li><%= link_to 'Services', services_path %>
-          <ul class="sub-menu">
-            <li><%= link_to 'Assistance', assistance_path %></li>
-            <li><%= link_to 'Interior Design', interior_design_path %></li>
-            <li><%= link_to 'Repair', repair_path %></li>
-            <li><%= link_to 'Personalization', personalization_path %></li>
-          </ul>
-        </li>
-        <li><%= link_to 'Distribution', distribution_path %>
-          <ul class="sub-menu">
-            <li><%= link_to 'Retail Shops', retail_shops_path %></li>
-            <li><%= link_to 'Showrooms', showrooms_path %></li>
-            <li><%= link_to 'Assistance points', assistance_points_path %></li>
-          </ul>
-        </li>
-        <li><%= link_to 'Events', events_path %></li>
-        <li><a>More...</a>
-          <ul class="sub-menu">
-            <li><%= link_to 'Contacts', contacts_path %></li>
-            <li><%= link_to 'FAQ', faq_path %></li>
-            <li><%= link_to 'Log In', log_in_path %></li>
-            <li><%= link_to 'Press', press_path %>
-              <ul class="sub-menu">
-                <li><%= link_to 'News', news_path %></li>
-                <li><%= link_to 'Magazine', magazine_path %></li>
-              </ul>
-            </li>
-          </ul>
-        </li>
-      </ul>
+    <div class="sixteen columns header-inner">
+      <div class="logo">
+        <%= link_to home_path do%>
+            <%= image_tag("logo1.png") %>
+        <% end %>
+      </div>
+      <nav id="main-nav">
+        <div class="nav">
+          <li class="link"><%= link_to 'Company', identity_path %>
+            <ul class="sub-menu">
+              <li><%= link_to 'Identity', identity_path %></li>
+              <li><%= link_to 'History', history_path %></li>
+            </ul>
+          </li>
+          <li class="link"><%= link_to 'Partners', partners_path %>
+            <ul class="sub-menu">
+              <li><%= link_to 'Introduction', introduction_partner_path %></li>
+              <li><%= link_to 'Images', images_partner_path %></li>
+              <li><%= link_to 'Contacts', contacts_partner_path %></li>
+            </ul>
+          </li>
+          <li class="link"><%= link_to 'Workspace', workspace_path %>
+            <ul class="sub-menu">
+              <li class="link"><a href="#">Collections</a>
+                <ul class="secondary-menu">
+                  <li><%= link_to 'Classic', collection_path(:id) %></li>
+                  <li><%= link_to 'Soft', collection_path(:id) %></li>
+                </ul>
+              </li>
+              <li><%= link_to 'New', new_workspace_path %></li>
+              <li><%= link_to 'Top', top_workspace_path %></li>
+            </ul>
+          </li>
+          <li class="link"><a href="#">Home Products</a>
+            <ul class="sub-menu">
+              <li><%= link_to 'Top', top_home_products_path %></li>
+              <li><%= link_to 'New', new_home_products_path %></li>
+              <li class="link"><a href="#">Types</a>
+                <ul class="secondary-menu">
+                  <li><%= link_to 'Sofas and Armchairs', type_home_products_path(:id) %></li>
+                  <li><%= link_to 'Night Furniture', type_home_products_path(:id) %></li>
+                  <li><%= link_to 'Beds', type_home_products_path(:id) %></li>
+                  <li><%= link_to 'Closets', type_home_products_path(:id) %></li>
+                  <li><%= link_to 'Chairs', type_home_products_path(:id) %></li>
+                  <li><%= link_to 'Systems', type_home_products_path(:id) %></li>
+                  <li><%= link_to 'Tables', type_home_products_path(:id) %></li>
+                  <li><%= link_to 'Single Furniture', type_home_products_path(:id) %></li>
+                  <li><%= link_to 'Lamps', type_home_products_path(:id) %></li>
+                  <li><%= link_to 'Fittings', type_home_products_path(:id) %></li>
+                </ul>
+              </li>
+              <li class="link"><a href="#">Rooms</a>
+                <ul class="secondary-menu">
+                  <li><%= link_to 'Bedroom', room_home_products_path(:id) %></li>
+                  <li><%= link_to 'Dining Room', room_home_products_path(:id) %></li>
+                  <li><%= link_to 'Studio', room_home_products_path(:id) %></li>
+                  <li><%= link_to 'Living Room', room_home_products_path(:id) %></li>
+                  <li><%= link_to 'Loft', room_home_products_path(:id) %></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li class="link"><%= link_to 'Designers', designers_path %></li>
+          <li class="link"><a href="#">Services</a>
+            <ul class="sub-menu">
+              <li><%= link_to 'Assistance', services_path(:id) %></li>
+              <li><%= link_to 'Interior Design', services_path(:id) %></li>
+              <li><%= link_to 'Repair', services_path(:id) %></li>
+              <li><%= link_to 'Personalization', services_path(:id) %></li>
+            </ul>
+          </li>
+          <li class="link"><a href="#">Distribution</a>
+            <ul class="sub-menu">
+              <li><%= link_to 'Retail Shops', distribution_path(:id) %></li>
+              <li><%= link_to 'Showrooms', distribution_path(:id) %></li>
+              <li><%= link_to 'Assistance points', distribution_path(:id) %></li>
+            </ul>
+          </li>
+          <li class="link"><%= link_to 'Events', events_path %></li>
+          <li class="link"><a href="#">More...</a>
+            <ul class="sub-menu">
+              <li><%= link_to 'Contacts', contacts_path %></li>
+              <li><%= link_to 'FAQ', faq_path %></li>
+              <li class="link"><a href="#">Press</a>
+                <ul class="secondary-menu">
+                  <li><%= link_to 'News', news_path %></li>
+                  <li><%= link_to 'Magazine', magazine_path %></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
 
-  </nav>
+        </div>
+      </nav>
+    </div>
   </div>
 </div>
 

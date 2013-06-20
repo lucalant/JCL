@@ -1,10 +1,7 @@
 class WorkspaceController < ApplicationController
-  def collections
+  def presentation
   end
 
-  def new
-  end
-
-  def top
+  def images
   end
 end
