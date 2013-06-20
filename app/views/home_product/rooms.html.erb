@@ -16,9 +16,11 @@
             <% if(homeproduct.room == [:room]) %>
                 <%link_to homeproduct_path(homeproduct) do%>
                     <%= image_tag("/homeproduct/#{homeproduct.image_url}") %>
-            <%end%>
+                <%end%>
           </td>
           <td class="title"> <%= link_to homeproduct.name, homeproduct_path(homeproduct) %> </td>
         </tr>
+            <%end%>
+    <%end%>
   </table>
 </section>
