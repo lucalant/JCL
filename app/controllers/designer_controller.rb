@@ -1,10 +1,7 @@
 class DesignerController < ApplicationController
-
   def index
-
   end
 
-
-  @events = .e_id
-
+  def works
+  end
 end

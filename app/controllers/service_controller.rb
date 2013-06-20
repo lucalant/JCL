@@ -1,7 +1,13 @@
 class ServiceController < ApplicationController
-
-  def index
-
+  def assistance
   end
 
+  def interiorDesign
+  end
+
+  def Repair
+  end
+
+  def Personalization
+  end
 end
