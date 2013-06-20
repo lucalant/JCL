@@ -1,0 +1,26 @@
+<h1>HomeProduct#rooms</h1>
+<p>Find me in app/views/home_product/rooms.html.erb</p>
+<section id="transitionlinks">
+  <ul>
+     <li> All rooms </li>
+     <li> previous room </li>
+     <li> next room </li>
+  </ul>
+</section>
+
+<section id="homeProducts">
+  <table>
+    <% @home_product.each do |homeproduct|  %>
+        <tr>
+          <td class = "image">
+            <% if(homeproduct.room == [:room]) %>
+                <%link_to homeproduct_path(homeproduct) do%>
+                    <%= image_tag("/homeproduct/#{homeproduct.image_url}") %>
+                <%end%>
+          </td>
+          <td class="title"> <%= link_to homeproduct.name, homeproduct_path(homeproduct) %> </td>
+        </tr>
+            <%end%>
+    <%end%>
+  </table>
+</section>

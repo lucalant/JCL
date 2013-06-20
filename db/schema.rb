@@ -46,6 +46,7 @@ ActiveRecord::Schema.define(version: 20130620125113) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer "room"
+    t.string "name"
   end
 
   create_table "partners", force: true do |t|
