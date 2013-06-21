@@ -24,7 +24,6 @@ ActiveRecord::Schema.define(version: 20130620125113) do
 
   create_table "distributions", force: true do |t|
     t.string   "presentation"
-    t.string "type"
     t.string   "img_url"
     t.string   "map"
     t.datetime "created_at"
@@ -45,8 +44,6 @@ ActiveRecord::Schema.define(version: 20130620125113) do
     t.string   "introduction"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer "room"
-    t.string "name"
   end
 
   create_table "partners", force: true do |t|
