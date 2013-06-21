@@ -106,29 +106,35 @@ JCLdesign::Application.routes.draw do
   match 'contacts_partner' => 'partner#contacts', :via => :get
   match 'images_partner' => 'partner#images', :via => :get
 
-  resources :workspace, :only => [:presentation, :images, :new, :top, :images, :presentation, :collections, :collection]
+  resources :workspace, :only => [:presentation, :images, :new, :top, :collection]
 
   match 'collection' => 'workspace#collection', :via => :get
   match 'new_workspace' => 'workspace#new', :via => :get
   match 'top_workspace' => 'workspace#top', :via => :get
-  match 'workspace_presentation' => 'workspace#presentation', :via => :get
+  match 'workspace' => 'workspace#presentation', :via => :get
   match 'workspace_images' => 'workspace#images', :via => :get
 
-  resources :home_product, :only => [:index, :new, :top, :types, :type, :rooms, :room]
-  match 'top_home_products' => 'home_product#top_home_products', :via => :get
-  match 'new_home_products' => 'home_product#new_home_products', :via => :get
-  match 'type_home_products' => 'home_product#all_types', :via => :get
-  match 'room_home_products' => 'home_product#all_rooms', :via => :get
-  match 'home_products_by_room' => 'home_product#products_by_room', :via => :get
-  match 'home_product_distribution' => 'home_product#home_distribution', :via => :get
-  match 'create_home_products' => 'home_product#create', :via => :get
+  resources :home_product, :only => [:index, :new_home_products, :top_home_products, :all_types, :all_rooms, :products_by_room, :home_distribution, :create, :products_by_type]
+  match 'top_home_products' => 'home_products#top_home_products', :via => :get
+  match 'new_home_products' => 'home_products#new_home_products', :via => :get
+  match 'type_home_products' => 'home_products#all_types', :via => :get
+  match 'room_home_products' => 'home_products#all_rooms', :via => :get
+  match 'home_products_by_room' => 'home_products#products_by_room', :via => :get
+  match 'home_products_by_type' => 'home_products#products_by_type', :via => :get
+  match 'home_product_distribution' => 'home_products#home_distribution', :via => :get
+  match 'home_products_create' => 'home_products#create', :via => :get
+  match 'home_products' => 'home_products#index', :via => :get
 
-  resources :designer, :only => [:index, :works]
+  resources :designer, :only => [:index, :about]
   match 'designers' => 'designer#index', :via => :get
   match 'about_designer' => 'designer#about', :via => :get
 
-  resources :service, :only => [:assistance, :interior_design, :personalization, :repair, :show]
+  resources :service, :only => [:assistance, :interior_design, :Personalization, :Repair, :show]
   match 'services' => 'service#show', :via => :get
+  match 'services_assistance' => 'service#assistance', :via => :get
+  match 'services_interior_design' => 'service#interior_design', :via => :get
+  match 'services_personalization' => 'service#Personalization', :via => :get
+  match 'services_repair' => 'service#Repair', :via => :get
 
   resources :top_client, :only => [:index]
   match 'top client' => 'top_client#index', :via => :get
@@ -155,7 +161,7 @@ JCLdesign::Application.routes.draw do
 
   root :to => 'home#index'
 
-  match ':controller(/:action(/:id))(.:format)'
+
 
 
 end

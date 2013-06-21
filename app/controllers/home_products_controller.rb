@@ -1,13 +1,5 @@
 class HomeProductsController < ApplicationController
-  def create
-    image_io = params[:home_product][:image_url]
-    File.open(Rails.root.join('assets','images','homeproduct' image_io.original_filename), 'wb') do |file|
-    file.write(image_io.read)
-  end
-  params[:home_product][:image_url] = image_io.original_filename
-  HomeProduct.create(params[:home_product])
-  redirect_to admins_path
-  end
+
 
 
 
