@@ -1,15 +1,8 @@
 JCLdesign::Application.routes.draw do
 
 
-  get "home_products/create"
-  get "home_products/products_by_room"
-  get "home_products/home_products_by_type"
-  get "home_products/new_home_products"
-  get "home_products/top_home_products"
-  get "home_products/index"
-  get "home_products/all_rooms"
-  get "home_products/all_types"
-  get "home_products/home_distribution"
+  get "designer/about"
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -65,33 +58,6 @@ JCLdesign::Application.routes.draw do
   #     resources :products
   #   end
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
   match 'home' => 'home#index', :via => :get
   match 'admin' => 'admin#index', :via => :get, :as => :admins
 
@@ -127,14 +93,13 @@ JCLdesign::Application.routes.draw do
 
   resources :designer, :only => [:index, :about]
   match 'designers' => 'designer#index', :via => :get
-  match 'about_designer' => 'designer#about', :via => :get
 
-  resources :service, :only => [:assistance, :interior_design, :Personalization, :Repair, :show]
+  resources :service, :only => [:assistance, :interior_design, :personalization, :repair, :show]
   match 'services' => 'service#show', :via => :get
   match 'services_assistance' => 'service#assistance', :via => :get
   match 'services_interior_design' => 'service#interior_design', :via => :get
-  match 'services_personalization' => 'service#Personalization', :via => :get
-  match 'services_repair' => 'service#Repair', :via => :get
+  match 'services_personalization' => 'service#personalization', :via => :get
+  match 'services_repair' => 'service#repair', :via => :get
 
   resources :top_client, :only => [:index]
   match 'top client' => 'top_client#index', :via => :get

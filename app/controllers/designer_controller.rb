@@ -1,8 +1,6 @@
 class DesignerController < ApplicationController
   def index
     @all_designers = Designer.all
-
-
   end
 
   def works
@@ -10,11 +8,7 @@ class DesignerController < ApplicationController
   end
 
   def about
-    @designer = params[:id]
-    @designerName = @designer.name
-    @designerSurname = @designer.surname
-    @designerDescription= @designer.description
-    @designeImage = @designer.img_url
+    @designer = Designer.find(params[:id])
 
   end
 
