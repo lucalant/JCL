@@ -6,8 +6,10 @@ class CreateHomeProducts < ActiveRecord::Migration
       t.string :introduction
       t.integer :did
       t.integer :home_product_id
-      t.integer :room
+      t.string :room
       t.string :name
+      t.boolean :top
+      t.string :type
 
       t.timestamps
     end
