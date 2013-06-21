@@ -1,6 +1,15 @@
 JCLdesign::Application.routes.draw do
 
 
+  get "home_products/create"
+  get "home_products/products_by_room"
+  get "home_products/home_products_by_type"
+  get "home_products/new_home_products"
+  get "home_products/top_home_products"
+  get "home_products/index"
+  get "home_products/all_rooms"
+  get "home_products/all_types"
+  get "home_products/home_distribution"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
