@@ -45,10 +45,8 @@ ActiveRecord::Schema.define(version: 20130620125113) do
     t.string   "introduction"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string "room"
-    t.string "type"
+    t.integer "room"
     t.string "name"
-    t.boolean "top"
   end
 
   create_table "partners", force: true do |t|
@@ -83,7 +81,6 @@ ActiveRecord::Schema.define(version: 20130620125113) do
     t.string   "text"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.boolean "top"
   end
 
 end
