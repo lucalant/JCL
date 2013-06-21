@@ -4,9 +4,7 @@ class HomeProductController < ApplicationController
 
   def top
   end
-  def createObject
-    @home_product = HomeProduct.new
-  end
+
   def new
 
   end
@@ -14,9 +12,9 @@ class HomeProductController < ApplicationController
   def types
   end
 
-  def rooms
-
-    @home_product = HomeProduct.find(params[:room]).order('title ASC')
+  def products_by_room
+    @room = params[:room]
+    @home_product_byroom = HomeProduct.where('room = ?', @room).order('title ASC')
 
   end
   def create
