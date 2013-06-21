@@ -105,6 +105,7 @@ JCLdesign::Application.routes.draw do
   match 'type_home_products' => 'home_product#type', :via => :get
   match 'room_home_products' => 'home_product#room', :via => :get
 
+
   match 'designers' => 'designer#index', :via => :get
 
   match 'services' => 'service#show', :via => :get
