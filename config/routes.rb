@@ -67,27 +67,27 @@ JCLdesign::Application.routes.draw do
 
 
 
-  resources :distribution, :only => [:index, :map]
-
-  resources :event, :only => [:index, :media]
 
 
 
-  resources :partner, :only => [:index, :images, :introduction, :contacts]
 
 
 
-  resources :top_client, :only => [:index]
 
-  resources :workspace, :only => [:presentation, :images, :new, :top, :images, :presentation, :collections, :collection]
 
-  resources :company, :only => [:history, :identity]
 
-  resources :press, :only => [:news, :magazine]
 
-  resources :faq, :only => [:text]
 
-  resources :contact, :only => [:text]
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -95,18 +95,24 @@ JCLdesign::Application.routes.draw do
   match 'home' => 'home#index', :via => :get
   match 'admin' => 'admin#index', :via => :get, :as => :admins
 
+  resources :company, :only => [:history, :identity]
   match 'identity' => 'company#identity', :via => :get
   match 'history' => 'company#history', :via => :get
+
+  resources :partner, :only => [:index, :images, :introduction, :contacts]
 
   match 'partners' => 'partner#index', :via => :get
   match 'introduction_partner' => 'partner#introduction', :via => :get
   match 'contacts_partner' => 'partner#contacts', :via => :get
   match 'images_partner' => 'partner#images', :via => :get
 
-  match 'workspace' => 'workspace#presentation', :via => :get
+  resources :workspace, :only => [:presentation, :images, :new, :top, :images, :presentation, :collections, :collection]
+
   match 'collection' => 'workspace#collection', :via => :get
   match 'new_workspace' => 'workspace#new', :via => :get
   match 'top_workspace' => 'workspace#top', :via => :get
+  match 'workspace_presentation' => 'workspace#presentation', :via => :get
+  match 'workspace_images' => 'workspace#images', :via => :get
 
   resources :home_product, :only => [:index, :new, :top, :types, :type, :rooms, :room]
   match 'top_home_products' => 'home_product#top_home_products', :via => :get
@@ -119,17 +125,30 @@ JCLdesign::Application.routes.draw do
 
   resources :designer, :only => [:index, :works]
   match 'designers' => 'designer#index', :via => :get
-  match 'designers' => 'designer#about', :via => :get
+  match 'about_designer' => 'designer#about', :via => :get
 
   resources :service, :only => [:assistance, :interior_design, :personalization, :repair, :show]
   match 'services' => 'service#show', :via => :get
 
+  resources :top_client, :only => [:index]
+  match 'top client' => 'top_client#index', :via => :get
+
+  resources :distribution, :only => [:index, :map]
   match 'distribution' => 'distribution#index', :via => :get
+  match 'distribution_map' => 'distribution#map', :via => :get
 
+
+  resources :event, :only => [:index, :media]
   match 'events' => 'event#index', :via => :get
+  match 'events_media' => 'event#media', :via => :get
 
+  resources :faq, :only => [:text]
   match 'faq' => 'faq#text', :via => :get
+
+  resources :contact, :only => [:text]
   match 'contacts' => 'contact#text', :via => :get
+
+  resources :press, :only => [:news, :magazine]
   match 'news' => 'press#news', :via => :get
   match 'magazine' => 'press#magazine', :via => :get
 

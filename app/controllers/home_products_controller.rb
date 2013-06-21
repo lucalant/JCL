@@ -13,7 +13,7 @@ class HomeProductsController < ApplicationController
 
   def products_by_room
     @room = params[:room]
-    @home_product_byroom = HomeProduct.where('room = ?', @room).order('title ASC')
+    @home_product_by_room = HomeProduct.where('room = ?', @room).order('title ASC')
 
   end
 
