@@ -1,13 +1,24 @@
 class DesignerController < ApplicationController
   def index
-    @consoles = Console.order('name ASC').all
+    @all_designers = Designer.all
+
+
   end
 
   def works
+
   end
 
   def about
-    @designer = Designer.find(params[:id])
+    @designer = params[:id]
+    @designerName = @designer.name
+    @designerSurname = @designer.surname
+    @designerDescription= @designer.description
+    @designeImage = @designer.img_url
 
+  end
+
+  def full_string
+    "#{name} #{lastname}"
   end
 end
