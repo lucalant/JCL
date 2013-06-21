@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130620125113) do
+ActiveRecord::Schema.define(version: 20130621134215) do
 
   create_table "designers", force: true do |t|
     t.string   "name"
@@ -30,6 +30,13 @@ ActiveRecord::Schema.define(version: 20130620125113) do
     t.datetime "updated_at"
   end
 
+  create_table "distributions_services", force: true do |t|
+    t.integer  "service_id"
+    t.integer  "distribution_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "events", force: true do |t|
     t.string   "about"
     t.text     "video"
@@ -38,10 +45,24 @@ ActiveRecord::Schema.define(version: 20130620125113) do
     t.datetime "updated_at"
   end
 
+  create_table "events_designers", force: true do |t|
+    t.integer  "event_id"
+    t.integer  "distribution_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "home_products", force: true do |t|
     t.string   "images"
     t.string   "text"
     t.string   "introduction"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "home_products_distributions", force: true do |t|
+    t.integer  "home_product_id"
+    t.integer  "distribution_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -76,6 +97,13 @@ ActiveRecord::Schema.define(version: 20130620125113) do
     t.string   "presentation"
     t.string   "img_url"
     t.string   "text"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "workspaces_distributions", force: true do |t|
+    t.integer  "workspace_id"
+    t.string   "distribution_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
