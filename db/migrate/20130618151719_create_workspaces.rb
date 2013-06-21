@@ -6,6 +6,7 @@ class CreateWorkspaces < ActiveRecord::Migration
       t.string :text
       t.integer :did
       t.integer :workspace_id
+      t.boolean :top
 
       t.timestamps
     end
