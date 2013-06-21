@@ -1,2 +1,45 @@
-<h1>Designer#index</h1>
-<p>Find me in app/views/designer/index.html.erb</p>
+<section id="pre-content">
+  <div class="pre-content-inner">
+    <div class="container">
+      <div class="sixteen columns">
+        <div class="space-title">
+          <h1 class="page-title"><%= @designer.name  @designer.surname%>.</h1>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="main-container" class="container" role="main">
+  <div id="main" class="sixteen columns content">
+    <!-- post entry -->
+      <div class="post-content">
+        <div class="asc-columns one_third">
+          <div class="asc-frame">
+            <p> <%= image_tag ("/designer/#{@designer.image_url}"), :style => "width='300'; height='199'" %>  </p>
+            </div>
+
+          <p>Collaborated at <a class="more-link" href="#"><span> <span style="color: red; font-size: 13px; line-height: 19px;">Event “Berlin Expo” </span></span></a></p>
+          <p>Designed <a class="more-link" href="#"><span> <span style="color: red; font-size: 13px; line-height: 19px;">Home products</span>&nbsp;</span></a></p>
+          <p>Designed <a class="more-link" href="#"><span>&nbsp;<span style="color: red; font-size: 13px; line-height: 19px;">Workspace products</span>&nbsp;</span></a></p>
+          <div class="clearfix"></div>
+          <div class="asc-divider divider"></div>
+
+          <p><a class="more-link" href="#"><span> Images&nbsp;</span></a></p>
+          <p><a class="more-link" href="#"><span> Notorious works of&nbsp;Charles Eames&nbsp;</span></a></p>
+          <div class="clearfix"></div>
+          <div class="asc-divider divider"></div>
+
+          <p>You are in the category <a class="more-link" href="#"><span>&nbsp;Designers </span></a></p>
+          <p><a href="#" class="asc-button small gray"><span> Previous </span></a>&nbsp;<strong>……</strong>&nbsp;<a href="#" class="asc-button small gray"><span> Next</span></a></p>
+          <p><a href="#" class="asc-button small light"><span> All Designers </span></a></p>
+        </div>
+        <div class="asc-columns one_half last">
+          <p><strong>About</strong></p>
+          <p><%= @designer.description %></p>
+        <div class="clearfix"></div>
+        </div>
+        </div>
+    <!-- end post entry -->
+  </div>
+</section>
