@@ -65,17 +65,17 @@ JCLdesign::Application.routes.draw do
   #     resources :products
   #   end
 
-  resources :designer, :only => [:index, :works]
+
 
   resources :distribution, :only => [:index, :map]
 
   resources :event, :only => [:index, :media]
 
-  resources :home_product, :only => [:index, :new, :top, :types, :type, :rooms, :room]
+
 
   resources :partner, :only => [:index, :images, :introduction, :contacts]
 
-  resources :service, :only => [:assistance, :interior_design, :personalization, :repair, :show]
+
 
   resources :top_client, :only => [:index]
 
@@ -108,15 +108,20 @@ JCLdesign::Application.routes.draw do
   match 'new_workspace' => 'workspace#new', :via => :get
   match 'top_workspace' => 'workspace#top', :via => :get
 
+  resources :home_product, :only => [:index, :new, :top, :types, :type, :rooms, :room]
+  match 'top_home_products' => 'home_product#top_home_products', :via => :get
+  match 'new_home_products' => 'home_product#new_home_products', :via => :get
+  match 'type_home_products' => 'home_product#all_types', :via => :get
+  match 'room_home_products' => 'home_product#all_rooms', :via => :get
+  match 'home_products_by_room' => 'home_product#products_by_room', :via => :get
+  match 'home_product_distribution' => 'home_product#home_distribution', :via => :get
+  match 'create_home_products' => 'home_product#create', :via => :get
 
-  match 'top_home_products' => 'home_product#top', :via => :get
-  match 'new_home_products' => 'home_product#new', :via => :get
-  match 'type_home_products' => 'home_product#type', :via => :get
-  match 'room_home_products' => 'home_product#room', :via => :get
-
-
+  resources :designer, :only => [:index, :works]
   match 'designers' => 'designer#index', :via => :get
+  match 'designers' => 'designer#about', :via => :get
 
+  resources :service, :only => [:assistance, :interior_design, :personalization, :repair, :show]
   match 'services' => 'service#show', :via => :get
 
   match 'distribution' => 'distribution#index', :via => :get
@@ -130,6 +135,8 @@ JCLdesign::Application.routes.draw do
 
 
   root :to => 'home#index'
+
+  match ':controller(/:action(/:id))(.:format)'
 
 
 end

@@ -34,11 +34,15 @@ class HomeProductsController < ApplicationController
   end
 
   def all_rooms
+
+
   end
+
+
 
   def all_types
   end
 
   def home_distribution
   end
-end
+
