@@ -37,4 +37,5 @@ class HomeProductsController < ApplicationController
 
   def home_distribution
   end
+ end
 
