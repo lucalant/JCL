@@ -1,11 +1,6 @@
 JCLdesign::Application.routes.draw do
 
-  get "press/magazine"
-  get "press/news"
-  get "faq/form"
-  get "faq/text"
-  get "contact/map"
-  get "contact/text"
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

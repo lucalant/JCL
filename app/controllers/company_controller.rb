@@ -1,7 +1,7 @@
 class CompanyController < ApplicationController
-  def history
+  def identity
   end
 
-  def identity
+  def history
   end
 end
