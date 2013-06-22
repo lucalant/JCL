@@ -18,24 +18,19 @@
       </div>
       <nav id="main-nav">
         <div class="nav">
-          <li class="link"><%= link_to 'Company', identity_path %>
+          <li class="link"><%= link_to 'About the Company', identity_path %>
             <ul class="sub-menu">
               <li><%= link_to 'Identity', identity_path %></li>
               <li><%= link_to 'History', history_path %></li>
             </ul>
           </li>
-          <li class="link"><%= link_to 'Partners', partners_path %>
-            <ul class="sub-menu">
-              <li><%= link_to 'Introduction', introduction_partner_path %></li>
-              <li><%= link_to 'Images', images_partner_path %></li>
-              <li><%= link_to 'Contacts', contacts_partner_path %></li>
-            </ul>
+          <li class="link"><%= link_to 'Our Partners', partners_path %>
           </li>
           <li class="link"><%= link_to 'Workspace', workspace_path %>
             <ul class="sub-menu">
-              <li><%= link_to 'New', new_workspace_path %></li>
-              <li><%= link_to 'Top', top_workspace_path %></li>
-              <li><a href="#">Collections</a>
+              <li><%= link_to 'New Arrivals', new_workspace_path %></li>
+              <li><%= link_to 'Top Workstations', top_workspace_path %></li>
+              <li><%= link_to'All Collections',collections_path %>
                 <ul>
                   <li><%= link_to 'Classic', collection_path(:id) %></li>
                   <li><%= link_to 'Soft', collection_path(:id) %></li>
@@ -43,11 +38,11 @@
               </li>
             </ul>
           </li>
-          <li class="link"><a href="#">Home Products</a>
+          <li class="link"><%=link_to 'Home Products' , home_products_path %>
             <ul class="sub-menu">
-              <li><%= link_to 'Top', top_home_products_path %></li>
-              <li><%= link_to 'New', new_home_products_path %></li>
-              <li><a href="#">Rooms</a>
+              <li><%= link_to 'Top Home Products', top_home_products_path %></li>
+              <li><%= link_to 'New Arrivals', new_home_products_path %></li>
+              <li><%= link_to 'Rooms', room_home_products_path %>
                 <ul>
                   <li><%= link_to 'Bedroom', room_home_products_path(:id) %></li>
                   <li><%= link_to 'Dining Room', room_home_products_path(:id) %></li>
@@ -56,7 +51,7 @@
                   <li><%= link_to 'Loft', room_home_products_path(:id) %></li>
                 </ul>
               </li>
-              <li><a href="#">Types</a>
+              <li><<%= link_to 'Categories ', type_home_products_path %>
                 <ul>
                   <li><%= link_to 'Sofas and Armchairs', type_home_products_path(:id) %></li>
                   <li><%= link_to 'Night Furniture', type_home_products_path(:id) %></li>
@@ -72,36 +67,35 @@
               </li>
             </ul>
           </li>
-          <li class="link"><%= link_to 'Designers', designers_path %></li>
-          <li class="link"><a href="#">Services</a>
+          <li class="link"><%= link_to 'Designers', designer_index_path %></li>
+
+          <li class="link"> <p class ="nolink" > Services </p>
             <ul class="sub-menu">
-              <li><%= link_to 'Assistance', services_path(:id) %></li>
-              <li><%= link_to 'Interior Design', services_path(:id) %></li>
-              <li><%= link_to 'Repair', services_path(:id) %></li>
-              <li><%= link_to 'Personalization', services_path(:id) %></li>
-            </ul>
-          </li>
-          <li class="link"><a href="#">Distribution</a>
-            <ul class="sub-menu">
-              <li><%= link_to 'Retail Shops', distribution_path(:id) %></li>
-              <li><%= link_to 'Showrooms', distribution_path(:id) %></li>
-              <li><%= link_to 'Assistance points', distribution_path(:id) %></li>
-            </ul>
-          </li>
-          <li class="link"><%= link_to 'Events', events_path %></li>
-          <li class="link"><a href="#">More...</a>
-            <ul class="sub-menu">
-              <li><%= link_to 'Contacts', contacts_path %></li>
-              <li><%= link_to 'FAQ', faq_path %></li>
-              <li class="link"><a href="#">Press</a>
-                <ul>
-                  <li><%= link_to 'News', news_path %></li>
-                  <li><%= link_to 'Magazine', magazine_path %></li>
-                </ul>
-              </li>
+              <li><%= link_to 'Assistance', services_assistance_path %></li>
+              <li><%= link_to 'Interior Design', services_interior_design_path%></li>
+              <li><%= link_to 'Repair', services_repair_path %></li>
+              <li><%= link_to 'Personalization', services_personalization_path %></li>
             </ul>
           </li>
 
+          <li class="link"><%= link_to 'Top Clients', all_top_clients_path %></li>
+          <li class="link"><%= link_to 'Distribution', distribution_types_path%></li>
+          <li class="link"><%= link_to 'Events', event_all_events_path %>
+            <ul class="sub-menu">
+              <li><%= link_to 'All Events', event_all_events_path %></li>
+              <li><%= link_to 'Monthly Events', event_events_by_month_path %></li>
+            </ul>
+            </li>
+          <li class = "link"> <%= link_to 'Contacts', contacts_path %>
+          </li>
+          <li class = "link"><%= link_to 'FAQ', faq_path %>
+          </li>
+          <li class="link"><%= link_to 'Press', news_path %>
+              <ul class="sub-menu">
+                <li><%= link_to 'News', news_path %></li>
+                <li><%= link_to 'Magazine', magazine_path %></li>
+              </ul>
+          </li>
         </div>
       </nav>
     </div>
