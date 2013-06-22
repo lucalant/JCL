@@ -1,3 +1,4 @@
+
 class EventController < ApplicationController
   def index
     if(params[:d_id])
@@ -34,8 +35,17 @@ class EventController < ApplicationController
 
   def media
   end
+
+  def events_by_month
+  end
+
+  def all_events
+  end
+end
+
   def event_params
     params.require(:name,:about).permit(:image_url, :did,:event_id,:video)
   end
+
 
 end

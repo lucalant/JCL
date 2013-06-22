@@ -1,6 +1,16 @@
 JCLdesign::Application.routes.draw do
 
 
+  get "event/index"
+  get "event/media"
+  get "event/events_by_month"
+  get "event/all_events"
+  get "distribution/types"
+  get "distribution/retail_shops"
+  get "distribution/showrooms"
+  get "distribution/assistance_points"
+  get "distribution/index"
+  get "distribution/map"
   get "designer/about"
 
   # The priority is based upon order of creation: first created -> highest priority.

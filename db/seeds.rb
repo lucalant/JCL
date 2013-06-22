@@ -20,7 +20,7 @@ Designers = Designer.create([{name: 'xbox', surname: 'Microsoft console', descri
 
 events = Event.create([{name: '', about: '', video: '', img_url: ''}, {name: '', about: '', video: '', img_url: ''}, {name: '', about: '', video: '', img_url: ''}])
 
-string 'about'
+t.string 'about'
 t.text 'video'
 t.string 'img_url'
 t.datetime 'created_at'
