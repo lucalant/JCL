@@ -235,6 +235,15 @@ input[type="text"]:focus, input[type="password"]:focus, input[type="email"]:focu
 .link:hover .sub-menu{
     display: block;
 }
+.nolink {
+    text-transform:uppercase;
+    letter-spacing:1px;
+    font:bold 12px/43px Arial, Helvetica, sans-serif;
+    padding:9px 15px 8px;
+    color:#fff;
+
+}
+
 
 .link a{
     text-transform: uppercase;
