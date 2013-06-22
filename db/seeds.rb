@@ -7,31 +7,3 @@
 #   Mayor.create(name: 'Emanuel', city: cities)
 
 
-#images = ['midnight.jpg', 'pes2009.jpg', 'rails.png', 'pes2009.jpg']
-
-
-Designer.delete_all
-Designers = Designer.create([{name: 'xbox', surname: 'Microsoft console', description: 'description', image_url: 'xbox.jpeg', created_at: 01012013, updated_at: '01023012', designer_id: '1'},
-                             {name: 'xbox', surname: 'Microsoft console', description: 'description', image_url: 'xbox.jpeg', created_at: 01012013, updated_at: '01023012', designer_id: '2'},
-                             {name: 'xbox', surname: 'Microsoft console', description: 'description', image_url: 'xbox.jpeg', created_at: 01012013, updated_at: '01023012', designer_id: '3'},
-                             {name: 'xbox', surname: 'Microsoft console', description: 'description', image_url: 'xbox.jpeg', created_at: 01012013, updated_at: '01023012', designer_id: '4'},
-                             {name: 'xbox', surname: 'Microsoft console', description: 'description', image_url: 'xbox.jpeg', created_at: 01012013, updated_at: '01023012', designer_id: '5'}
-                            ])
-
-
-
-
-
-
-
-#Game.delete_all
-#10.times {|i|
-#  g = Game.new title: "titolo_#{i}", description: "Desc",
-#               pegi: i, image_url: "#{images[i/3]}"
-#  g.save
-#}
-
-
-#consoles[0].games << Game.where("image_url like 'midni%'")
-#consoles[1].games << Game.where("image_url like 'pes%'")
-#consoles.last.games << Game.where("image_url like 'rails%'")
