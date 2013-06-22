@@ -4,8 +4,9 @@
     <div class = "container">
         <div class = "sixteen columns">
           <div class = "space-title">
-            <h1 class = "page-title" >
-                 <% @room %>
+            <h1 span class = "page-title" >
+              <% @room %>
+              products
             </h1>
           </div>
         </div>
@@ -14,7 +15,7 @@
   <section id= "main-container" class ="container" role = "main">
     <div id="main" class ="sixteen columns content">
       <article id="post-576"class ="post-576 page type-page status-publish hentry page-single clearfix" >
-        <%= @home_product_by_room.each do |homeproduct|  %>
+        <%= @home_product_by_room.each do |homeproduct| %>
           <div class="asc-columns one_fourth">
               <div class = "asc-frame">
                 <span >
@@ -31,18 +32,18 @@
         <%end%>
         <div class = "post-content">
             <span class ="orientation info">
-            <p>" You are in " </p>
-                <%= link_to "home products", HomeProduct.index %>  <span> <%= link_to @room %> </span>
+            <p> You are in home products of </p>
+              <span> <%= link_to @room %> </span>
             </span>
         </div>
+        <section>
+          <p><%= link_to home_path, {:class => "asc-button small gray"} do%><span> Previous room </span><% end %>&nbsp;<strong>……</strong>&nbsp;
+            <%= link_to home_path, {:class => "asc-button small gray"} do%><span> Next room</span><% end %></p>
+          <li> link_to All rooms   </li>
+        </section>
       </article>
     </div>
   </section>
+
 </section>
 
-<section>
-
-    <li> link_to All rooms   </li>
-    <li> previous room </li>
-    <li> next room </li>
-</section>
