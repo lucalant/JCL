@@ -15,10 +15,8 @@ class DesignerController < ApplicationController
   def full_string
     "#{name} #{lastname}"
   end
-
   # to check the inserted parameters for the designer
   def designer_params
     params.require(:name,:surname,:img_url).permit(:description, :did,:designer_id)
   end
-
 end
