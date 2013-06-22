@@ -68,6 +68,7 @@ ActiveRecord::Schema.define(version: 20130622104220) do
   end
 
   create_table "home_products", force: true do |t|
+    t.string   "name"
     t.string   "images"
     t.string   "text"
     t.string   "introduction"
