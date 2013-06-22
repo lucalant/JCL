@@ -76,6 +76,7 @@
               <li><%= link_to 'Personalization', services_personalization_path %></li>
             </ul>
           </li>
+          <li class="link"><%= link_to 'Top Clients', all_top_clients_path %></li>
           <li class="link"><%= link_to 'Distribution', distribution_types_path%>
           </li>
           <li class="link"><%= link_to 'Events', event_all_events_path %></li>
@@ -84,13 +85,13 @@
               <li><%= link_to 'Monthly Events', event_events_by_month_path %></li>
             </ul>
           </li>
-           <!--  <li> <= link_to 'Contacts', contact_text_path %></li>
-          <li><= link_to 'FAQ', faq_path %></li>
-          <li class="link"><= link_to 'Press', press_path %>
+          <li> <%= link_to 'Contacts', contacts_path %></li>
+          <li><%= link_to 'FAQ', faq_path %></li>
+          <li class="link"><%= link_to 'Press', news_path %>
               <ul class="sub-menu">
-                <li><= link_to 'News', press_news_path %></li>
-                <li><= link_to 'Magazine', press_magazine_path %></li>
-              </ul>   -->
+                <li><%= link_to 'News', news_path %></li>
+                <li><%= link_to 'Magazine', magazine_path %></li>
+              </ul>
           </li>
         </div>
       </nav>
