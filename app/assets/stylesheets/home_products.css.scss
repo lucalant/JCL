@@ -1,3 +1,22 @@
 // Place all the styles related to the HomeProducts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+
+.asc-frame {
+  background-color:  #f4f4f4;
+  border: 1px solid #c0c0c0;
+  margin 0 0 20px
+  font-size:60px;
+  text-align:center;
+  text-transform:uppercase;
+  position: relative;
+  line-height:70%;
+  z-index:0;
+  padding: 80 px;
+  border-color:rgba(0, 0, 0, 0.1);
+  width:800 px;
+  height:800 px;
+
+}
