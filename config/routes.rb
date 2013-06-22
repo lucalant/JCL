@@ -109,6 +109,9 @@ JCLdesign::Application.routes.draw do
   resources :distribution, :only => [:index, :map]
   match 'distribution' => 'distribution#index', :via => :get
   match 'distribution_map' => 'distribution#map', :via => :get
+  match '/distribution/retailsShops/' => 'distribution#retail_shops', :via => :get
+  match '/distribution/showrooms/' => 'distribution#showrooms', :via => :get
+  match '/distribution/assistantPoints/' => 'distribution#assistant_points', :via => :get
 
 
   resources :event, :only => [:index, :media]
