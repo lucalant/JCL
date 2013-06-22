@@ -90,5 +90,10 @@ class HomeProductsController < ApplicationController
 
 
   end
- end
+end
+
+def home_products_params
+  params.require(:name,:introduction,:images,:text,:home_product_id,:room,:top,:type).permit(:eid, :did,:top_client_id,:pid)
+end
+
 
