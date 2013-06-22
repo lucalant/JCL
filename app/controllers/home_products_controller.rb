@@ -77,6 +77,18 @@ class HomeProductsController < ApplicationController
   end
 
   def home_distribution
+    @id =params[:id]
+    @home_product = HomeProduct.find(@id)
+    @home_product_distr_list = home_distribution.where("home_product = ?", @id )
+    if @home_product_distr_list !=nil
+      @distributions = Array.new
+      @home_product_distr_list.each do |homep_distr|
+        @distribution = Distribution.find(homep_distr.distribution_id)
+        @distributions.push @distribution
+      end
+    end
+
+
   end
  end
 
