@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/html">
 <head>
   <title>JCLdesign</title>
-  <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
 </head>
@@ -30,7 +30,7 @@
             <ul class="sub-menu">
               <li><%= link_to 'New Arrivals', new_workspace_path %></li>
               <li><%= link_to 'Top Workstations', top_workspace_path %></li>
-              <li><a href="#">'All Collections',collectiom %a>
+              <li><a href="#">'All Collections',collectiom  %a>
                 <ul>
                   <li><%= link_to 'Classic', collection_path(:id) %></li>
                   <li><%= link_to 'Soft', collection_path(:id) %></li>
@@ -67,8 +67,8 @@
               </li>
             </ul>
           </li>
-          <li class="link"><%= link_to 'Designers', designers_path %></li>
-          <li class="link"><%= link_to 'Services', services_path%>
+          <li class="link"><%= link_to 'Designers', designers_index_path %></li>
+          <li class="link"><li> Services </li>
             <ul class="sub-menu">
               <li><%= link_to 'Assistance', services_assistance_path %></li>
               <li><%= link_to 'Interior Design', services_interior_design_path%></li>
@@ -78,22 +78,22 @@
           </li>
           <li class="link"><%= link_to 'Distribution', distribution_types_path%>
           </li>
-          <li class="link"><%= link_to 'Events', events_path %></li>
-          <ul class="sub-menu">
-            <li><%= link_to 'All Events', all_events_path %></li>
-            <li><%= link_to 'Monthly Events', events_by_month_path %></li>
-          </ul>
+          <li class="link"><%= link_to 'Events', all_events_path %></li>
+            <ul class="sub-menu">
+              <li><%= link_to 'All Events', all_events_path %></li>
+              <li><%= link_to 'Monthly Events', events_by_month_path %></li>
+            </ul>
           </li>
-          <ul class="sub-menu">
-            <li><%= link_to 'Contacts', contacts_path %></li>
-            <li><%= link_to 'FAQ', faq_path %></li>
-            <li class="link"><%= link_to 'Press', press_path %>
-              <ul class="sub-menu">
-                <li><%= link_to 'News', news_path %></li>
-                <li><%= link_to 'Magazine', magazine_path %></li>
-              </ul>
-            </li>
-          </ul>
+            <ul class="sub-menu">
+              <li><%= link_to 'Contacts', contacts_path %></li>
+              <li><%= link_to 'FAQ', faq_path %></li>
+              <li class="link"><%= link_to 'Press', press_path %>
+                <ul class="sub-menu">
+                  <li><%= link_to 'News', news_path %></li>
+                  <li><%= link_to 'Magazine', magazine_path %></li>
+                </ul>
+              </li>
+            </ul>
         </div>
       </nav>
     </div>
@@ -114,7 +114,7 @@
           <div class="textwidget">
             <strong>Milan, Italy</strong>
             <div class="asc-contact address">Piazza Leonardo Da Vinci, 36, Milano, MI, Italia</div>
-            <div class="asc-contact phone">+39 388872712 or +39 388872434</div>
+            <div class="asc-contact phone">+39 388872712   or   +39 388872434</div>
             <div class="asc-contact mail"><a href="mailto:info@jcldesign.com">www.jcldesign.com</a></div>
           </div>
         </section>
