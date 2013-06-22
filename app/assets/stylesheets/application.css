@@ -763,3 +763,7 @@ a:hover,
     -o-transition: all 0.7s ease;
     transition: all 0.7s ease;
 }
+
+.followlink{
+color: red; font-size: 13px; line-height: 19px;
+}

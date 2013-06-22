@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130622104220) do
+ActiveRecord::Schema.define(version: 20130622140657) do
 
   create_table "contacts", force: true do |t|
     t.string   "text"
@@ -36,6 +36,7 @@ ActiveRecord::Schema.define(version: 20130622104220) do
     t.string   "map"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "name"
   end
 
   create_table "distributions_services", force: true do |t|
@@ -51,13 +52,14 @@ ActiveRecord::Schema.define(version: 20130622104220) do
     t.string   "img_url"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "name"
   end
 
   create_table "events_designers", force: true do |t|
     t.integer  "event_id"
-    t.integer  "distribution_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "designer_id", default: "designer_id", null: false
   end
 
   create_table "faqs", force: true do |t|
@@ -68,13 +70,17 @@ ActiveRecord::Schema.define(version: 20130622104220) do
   end
 
   create_table "home_products", force: true do |t|
-    t.string   "name"
     t.string   "images"
     t.string   "text"
     t.string   "introduction"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.boolean  "top",          default: false, null: false
+    t.boolean  "top",                       default: false,            null: false
+    t.string   "name",          limit: nil, default: "name",           null: false
+    t.string   "designer",      limit: nil, default: "designer",       null: false
+    t.string   "partner_event", limit: nil, default: "partner_client", null: false
+    t.string   "top_client",    limit: nil, default: "top_client",     null: false
+    t.string   "category",      limit: nil, default: "category",       null: false
   end
 
   create_table "home_products_distributions", force: true do |t|
