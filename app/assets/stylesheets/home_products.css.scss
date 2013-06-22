@@ -3,19 +3,28 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
+.transition-link {
+  background: #CCCCCC;
+  padding: 15px 15px;
+  position:relative;
+  display:inline-block;
 
+}
+.transition-content {
+  list-style-type:square;
+  margin-left:300px;
+  margin-right :300px;
+  border-top-color: #f4f4f4;
+  border-top-width: 5px;
+  }
+.hentry{
+  width:100%;
+}
 .asc-frame {
   background-color:  #f4f4f4;
   border: 1px solid #c0c0c0;
-  margin: 0 0 20px;
-  font-size:60px;
   text-align:center;
   text-transform:uppercase;
-  position: relative;
-  line-height:70%;
-  z-index:0;
-  padding: 80 px;
-  border-color:rgba(0, 0, 0, 0.1);
-
-
+  font: 30px Arial,Helvetica,sans-serif;
+  color: #00adee;
 }
