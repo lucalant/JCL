@@ -89,6 +89,7 @@ ActiveRecord::Schema.define(version: 20130622174444) do
     t.string   "partner_event", limit: nil, default: "partner_client", null: false
     t.string   "top_client",    limit: nil, default: "top_client",     null: false
     t.string   "category",      limit: nil, default: "category",       null: false
+    t.string   "room",          limit: nil
   end
 
   create_table "home_products_distributions", force: true do |t|
