@@ -11,7 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130621134215) do
+ActiveRecord::Schema.define(version: 20130622104220) do
+
+  create_table "contacts", force: true do |t|
+    t.string   "text"
+    t.string   "map"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "designers", force: true do |t|
     t.string   "name"
@@ -20,6 +27,7 @@ ActiveRecord::Schema.define(version: 20130621134215) do
     t.string   "img_url"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "top",         default: 0, null: false
   end
 
   create_table "distributions", force: true do |t|
@@ -52,12 +60,20 @@ ActiveRecord::Schema.define(version: 20130621134215) do
     t.datetime "updated_at"
   end
 
+  create_table "faqs", force: true do |t|
+    t.string   "text"
+    t.text     "form"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "home_products", force: true do |t|
     t.string   "images"
     t.string   "text"
     t.string   "introduction"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "top",          default: false, null: false
   end
 
   create_table "home_products_distributions", force: true do |t|
@@ -67,11 +83,27 @@ ActiveRecord::Schema.define(version: 20130621134215) do
     t.datetime "updated_at"
   end
 
+  create_table "logins", force: true do |t|
+    t.string   "user"
+    t.string   "password"
+    t.string   "image_url"
+    t.text     "text"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "partners", force: true do |t|
     t.string   "name"
     t.text     "description"
     t.string   "img_url"
     t.string   "contact"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "presses", force: true do |t|
+    t.text     "news"
+    t.text     "magazine"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
