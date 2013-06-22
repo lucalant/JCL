@@ -8,6 +8,9 @@ class HomeProductsController < ApplicationController
   def products_by_room
     @room = params[:room]
     @home_product_by_room = HomeProduct.where('room = ?', @room).order('title ASC')
+    if @home_product_by_room == nil
+      format.html { redirect_to admin_home_product_path, :notice => "We are sorry, but there isn't any product" }
+    end
 
   end
 
