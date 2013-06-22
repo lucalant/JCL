@@ -3,6 +3,9 @@ class DistributionController < ApplicationController
   end
 
   def showrooms
+    @distribution = Distribution.find(params[:id])
+    @distributionImage = "/distribution/"+ @distribution.img_url
+
   end
 
   def assistance_points
