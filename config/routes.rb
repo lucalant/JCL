@@ -82,8 +82,9 @@ JCLdesign::Application.routes.draw do
   match 'contacts_partner' => 'partner#contacts', :via => :get
   match 'images_partner' => 'partner#images', :via => :get
 
-  resources :workspace, :only => [:presentation, :images, :new, :top, :collection]
+  resources :workspace, :only => [:presentation, :images, :new, :top, :collection, :collections]
 
+  match 'collections' => 'workspace#collections', :via => :get
   match 'collection' => 'workspace#collection', :via => :get
   match 'new_workspace' => 'workspace#new', :via => :get
   match 'top_workspace' => 'workspace#top', :via => :get
@@ -124,9 +125,11 @@ JCLdesign::Application.routes.draw do
   match '/distribution/assistantPoints/' => 'distribution#assistant_points', :via => :get
 
 
-  resources :event, :only => [:index, :media]
+  resources :event, :only => [:index, :media,:all_events ,:events_by_month]
   match 'events' => 'event#index', :via => :get
   match 'events_media' => 'event#media', :via => :get
+  match '/events/allEvents/' => 'event#all_events', :via => :get
+  match '/events/eventsByMonth/' => 'event#events_by_month', :via => :get
 
   resources :faq, :only => [:text]
   match 'faq' => 'faq#text', :via => :get
