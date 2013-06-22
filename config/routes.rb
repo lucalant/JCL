@@ -91,8 +91,10 @@ JCLdesign::Application.routes.draw do
   match 'home_products_create' => 'home_products#create', :via => :get
   match 'home_products' => 'home_products#index', :via => :get
 
-  resources :designer, :only => [:index, :about]
+  resources :designer, :only => [:index, :about,:works]
   match 'designers' => 'designer#index', :via => :get
+  match '/designers/about' => 'designer#about', :via => :get
+  match '/designers/works' => 'designer#works', :via => :get
 
   resources :service, :only => [:assistance, :interior_design, :personalization, :repair, :show]
   match 'services' => 'service#show', :via => :get
