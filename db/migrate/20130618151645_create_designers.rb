@@ -6,6 +6,7 @@ class CreateDesigners < ActiveRecord::Migration
       t.text :description
       t.string :img_url
       t.integer :designer_id
+      t.boolean :top
 
       t.timestamps
     end

@@ -1,6 +1,8 @@
 JCLdesign::Application.routes.draw do
 
 
+  get "top_clients/show"
+  get "top_clients/all_top_clients"
   get "event/index"
   get "event/media"
   get "event/events_by_month"
