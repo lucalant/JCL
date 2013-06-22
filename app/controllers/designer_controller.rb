@@ -9,7 +9,7 @@ class DesignerController < ApplicationController
 
   def about
     @designer = Designer.find(params[:id])
-
+    @designerImage = "/designer/"+ @designer.img_url
   end
 
   def full_string

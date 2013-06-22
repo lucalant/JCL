@@ -1,5 +1,5 @@
 class Designer < ActiveRecord::Base
-    attr_accessible :name,:surname,:description, :img_url,:designer_id, :did
+
 
     validates :name, :presence => true
     validates :surname, :presence => true
