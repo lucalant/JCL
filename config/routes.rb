@@ -118,7 +118,7 @@ JCLdesign::Application.routes.draw do
 
   resources :top_client, :only => [:show,:all_top_clients]
   match 'top_client' => 'top_client#show', :via => :get
-  match 'all_top_clients' => 'top_client#all_top_clients', :via => :get
+  match 'all_top_clients' => 'top_clients#all_top_clients', :via => :get
 
   resources :distribution, :only => [:index, :map, :retail_shops,:showrooms,:assistant_points,:types]
   match 'distribution' => 'distribution#index', :via => :get

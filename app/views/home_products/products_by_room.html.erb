@@ -1,5 +1,4 @@
-<h1>HomeProducts#products_by_room</h1>
-<p>Find me in app/views/home_products/products_by_room.html.erb</p>
+
 <section id="pre-content">
   <div class = "pre-content-inner">
     <div class = "container">
@@ -32,8 +31,8 @@
         <%end%>
         <div class = "post-content">
             <span class ="orientation info">
-            <p>" You are in the " </p>
-                <%= link_to "home products", HomeProduct.index %>
+            <p>" You are in " </p>
+                <%= link_to "home products", HomeProduct.index %>  <span> <%= link_to @room %> </span>
             </span>
         </div>
       </article>
