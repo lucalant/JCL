@@ -8,7 +8,7 @@ class DesignerController < ApplicationController
   end
 
   def about
-    @designer = Designer.find(params[:id])
+    @designer = Designer.find(params[:id]).description
 
   end
 
