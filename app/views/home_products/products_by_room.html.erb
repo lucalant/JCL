@@ -5,7 +5,7 @@
         <div class = "sixteen columns">
           <div class = "space-title">
             <h1 span class = "page-title" >
-              <% @room %>
+              <%= @room %>
               products
             </h1>
           </div>
@@ -23,7 +23,7 @@
                   <%= link_to homeproduct.name, homeproduct_path(homeproduct) %>
                   </ul>
                   <ul class = "image">
-                    <%link_to homeproduct_path(homeproduct)%>
+                    <%=link_to homeproduct_path(homeproduct)%>
                         <%= image_tag("/homeproduct/#{homeproduct.image_url}") %>
                   </ul>
                 </span>
@@ -38,8 +38,8 @@
         </div>
         <section>
           <p><%= link_to home_path, {:class => "asc-button small gray"} do%><span> Previous room </span><% end %>&nbsp;<strong>……</strong>&nbsp;
-            <%= link_to home_path, {:class => "asc-button small gray"} do%><span> Next room</span><% end %></p>
-          <li> link_to All rooms   </li>
+            <%= link_to home_path, {:class => "asc-button small gray"} do%><span> Next room</span><% end %>
+           <%= link_to  room_home_products_path, {:class => "asc-button small gray"} do%> <span>Back to All Rooms</span><%end%></p>
         </section>
       </article>
     </div>
