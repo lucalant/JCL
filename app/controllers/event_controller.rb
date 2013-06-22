@@ -34,4 +34,8 @@ class EventController < ApplicationController
 
   def media
   end
+  def event_params
+    params.require(:name,:about).permit(:image_url, :did,:event_id,:video)
+  end
+
 end
