@@ -7,7 +7,7 @@ class HomeProductsController < ApplicationController
   end
   def products_by_room
     @room = params[:room]
-    @home_product_by_room = HomeProduct.where('room = ?', params[:room])
+    @home_product_by_room = HomeProduct.where('room = ?', @room)
     if @home_product_by_room == nil
       format.html { redirect_to admin_home_product_path, :notice => "We are sorry, but there isn't any product" }
     end
@@ -38,7 +38,7 @@ class HomeProductsController < ApplicationController
     @cat = params[:category]
 
     if @cat
-      @par = HomeProductt.find(@cat)
+      @par = HomeProduct.find(@cat)
       @procat = @par.category
     end
 
@@ -48,22 +48,22 @@ class HomeProductsController < ApplicationController
     end
 
     if @img
-      @par = home_product.find(@img)
+      @par =HomeProduct.find(@img)
       @proimg = @par.images
     end
 
     if @txt
-      @par = home_product.find(@txt)
+      @par = HomeProduct.find(@txt)
       @prodescr = @par.text
     end
 
     if @int
-      @par = home_product.find(@int)
+      @par = HomeProduct.find(@int)
       @prointro = @par.introduction
     end
 
     if @top
-      @par = home_product.find(@top)
+      @par = HomeProduct.find(@top)
       @protop = @par.top
     end
 
