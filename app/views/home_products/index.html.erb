@@ -33,7 +33,7 @@
       <div class="post-content">
         <div class="asc-columns one_third">
           <div class="asc-frame">
-            <p img class="size-medium wp-image-435 alignnone" alt="work-5" width="300" height="174"><%=image_tag("sofa.jpg") %></p>
+            <p img class="size-medium wp-image-435 alignnone" alt="work-5" width="300" height="174"><%= @home_product.images %></p>
           </div>
           <% if (@home_product.designer ) %>
           <p>Realised by <a class="more-link"><span><span style="color: red; font-size: 13px; line-height: 19px;">&nbsp<%= @home_product.designer %> &nbsp;</span></span></a></p>

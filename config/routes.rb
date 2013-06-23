@@ -118,6 +118,7 @@ JCLdesign::Application.routes.draw do
   match 'home_products_create' => 'home_products#create', :via => :get
   match 'home_products' => 'home_products#index', :via => :get
 
+
   resources :designer, :only => [:index, :about,:works]
   match 'designers' => 'designer#index', :via => :get
   match 'designer/about/:id' => 'designer#about', :via => :get
