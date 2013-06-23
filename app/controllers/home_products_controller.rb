@@ -67,6 +67,11 @@ class HomeProductsController < ApplicationController
       @protop = @par.top
     end
 
+    when @home_product.id >1
+    :id => @home_product.id-1
+
+
+
   end
 
   def all_rooms
@@ -99,4 +104,14 @@ def home_products_params
   params.require(:name,:introduction,:images,:text,:home_product_id,:room,:top,:type).permit(:eid, :did,:top_client_id,:pid)
 end
 
+def orientation_links
+  if @home_product_by_room.id >1
+end
 
+<% if @designer.id > 1 %>
+<%= link_to 'Previous', designer_about_path(:id => @designer.id-1), {:class => "asc-button small gray"} %>&nbsp;<strong>……</strong>&nbsp;
+              <% end %>
+            <% if @designer.id<@all_designers.size%>
+                <%= link_to 'Next', designer_about_path(:id => @designer.id+1), {:class => "asc-button small gray"} %>
+    <% end %>
+[24/06/13 00:23:31] Julia: e devi mettere @all_designers = Designer.all
