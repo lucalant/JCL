@@ -18,5 +18,6 @@ class DistributionController < ApplicationController
   end
 
   def types
+
   end
 end
