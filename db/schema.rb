@@ -145,6 +145,8 @@ ActiveRecord::Schema.define(version: 20130623115343) do
     t.string   "about"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "function",   limit: nil
+    t.string   "factory",    limit: nil
   end
 
   create_table "workspaces", force: true do |t|
