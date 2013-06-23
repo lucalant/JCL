@@ -120,8 +120,9 @@ JCLdesign::Application.routes.draw do
 
   resources :designer, :only => [:index, :about,:works]
   match 'designers' => 'designer#index', :via => :get
-  match '_designers_about' => 'designer#about', :via => :get
-  match '_designers_works' => 'designer#works', :via => :get
+  match 'designer/about/:id' => 'designer#about', :via => :get
+  match 'designers/works/:id' => 'designer#works', :via => :get
+  match 'works' => 'designer#works', :via => :get
 
   resources :service, :only => [:assistance, :interior_design, :personalization, :repair, :show]
   match 'services' => 'service#show', :via => :get
@@ -145,6 +146,7 @@ JCLdesign::Application.routes.draw do
 
   resources :event, :only => [:index, :media,:all_events ,:events_by_month]
   match 'events' => 'event#index', :via => :get
+  match '/events/:id' => 'event#show', :via => :get
   match 'events_media' => 'event#media', :via => :get
   match 'events_all_events/' => 'event#all_events', :via => :get
   match 'events_events_by_month' => 'event#events_by_month', :via => :get
