@@ -11,7 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130622140657) do
+ActiveRecord::Schema.define(version: 20130622174444) do
+
+  create_table "companies", force: true do |t|
+    t.string   "name"
+    t.string   "text"
+    t.string   "img_url"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "contacts", force: true do |t|
     t.string   "text"
@@ -81,6 +89,7 @@ ActiveRecord::Schema.define(version: 20130622140657) do
     t.string   "partner_event", limit: nil, default: "partner_client", null: false
     t.string   "top_client",    limit: nil, default: "top_client",     null: false
     t.string   "category",      limit: nil, default: "category",       null: false
+    t.string   "room",          limit: nil
   end
 
   create_table "home_products_distributions", force: true do |t|

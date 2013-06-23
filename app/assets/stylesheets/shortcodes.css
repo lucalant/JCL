@@ -453,7 +453,7 @@ a.more-link{
     position: relative;
     line-height:70%;
     z-index:0;
-    padding:15px;
+    padding: 100 px;
 }
 .asc-frame:before{
 

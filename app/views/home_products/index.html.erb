@@ -10,7 +10,7 @@
 
       <div class="sixteen columns">
         <div class="space-title">
-          <h1 class="page-title"> <% @home_product.category + @home_product.name  %></h1>
+          <h1 class="page-title"> <%= @home_product.category + @home_product.name  %></h1>
 
         </div>
       </div>
@@ -36,80 +36,35 @@
             <p img class="size-medium wp-image-435 alignnone" alt="work-5" width="300" height="174"><%=image_tag("sofa.jpg") %></p>
           </div>
           <% if (@home_product.designer ) %>
-          <p>Realised by <a class="more-link"><span><span style="color: red; font-size: 13px; line-height: 19px;">&nbsp<% @home_product.designer %> &nbsp;</span></span></a></p>
+          <p>Realised by <a class="more-link"><span><span style="color: red; font-size: 13px; line-height: 19px;">&nbsp<%= @home_product.designer %> &nbsp;</span></span></a></p>
           <% end %>
 
           <p><a class="more-link" href="#"><span>&nbsp;<span style="color: red; font-size: 13px; line-height: 19px;">Where to buy it</span> </span></a></p>
           <% if (@home_product.event ) %>
-          <p>Presented at <a class="more-link" ><span><span style="color: red; font-size: 13px; line-height: 19px;"> Event <% @home_product.event %> </span> </span></a> </p>
+          <p>Presented at <a class="more-link" ><span><span style="color: red; font-size: 13px; line-height: 19px;"> Event <%= @home_product.event %> </span> </span></a> </p>
           <% end%>
           <div class="clearfix"></div>
           <div class="asc-divider divider"></div>
           <p>You are in the category <a class="more-link" ><span>&nbsp;<span style="color: #ccffcc;"><%= link_to @home_product.category %>></span>&nbsp;</span></a>, &nbsp;in &nbsp;<a class="more-link" ><span>&nbsp;<span style="color: #ccffcc;"> <%= link_to "Home Products" , home_product%> </span>&nbsp;</span></a></p>
-          <p><a href="#" class="asc-button small gray"><span> Previous </span></a> <strong>……</strong> <a href="#" class="asc-button small gray"><span> Next</span></a></p>
-          <p><a href="#" class="asc-button small light"><span> All Sofas and Armchairs </span></a></p>
+          <p><a  class="asc-button small gray"><span> <%= link_to "Previous", %> </span></a> <strong>……</strong> <a  class="asc-button small gray"><span> <%= link_to "Next", %></span></a></p>
+          <p><a  class="asc-button small light"><span> <%= link_to @home_product.category %> </span></a></p>
         </div>
         <div class="asc-columns one_half last">
-          <p>Meeting Place. Gather with friends and family in a graciously inviting space with our Rendezvous IV collection. This sofa’s casually sophisticated look will liven up your home, with its flared frame, oversize roll arms, loose pillow back and matching welting. The microfiber upholstery is rugged and easily maintained, yet soft to the touch. The luscious chocolate color will add depth to your decorating scheme, and a cheerful, graphic accent fabric on the toss pillows tops off the fashionable look.</p>
+          <%= @home_product.introduction %>
           <table border="0" cellspacing="10" cellpadding="0">
             <colgroup>
               <col>
               <col></colgroup>
+            <% @home_product.text.each do |detail|  %>
             <tbody>
-            <tr>
-              <td align="left" valign="top">Finish:</td>
-              <td align="left" valign="top">Chocolate</td>
-            </tr>
-            <tr>
-              <td align="left" valign="top">Material:</td>
-              <td align="left" valign="top">Microfiber</td>
-            </tr>
-            <tr>
-              <td align="left" valign="top">Unique Features:</td>
-              <td align="left" valign="top">Welted detailing adds a stylish element of visual interest.</td>
-            </tr>
-            <tr>
-              <td align="left" valign="top"></td>
-              <td align="left" valign="top">Casual knife-edge back pillows keep the look inviting and comfortable.</td>
-            </tr>
-            <tr>
-              <td align="left" valign="top"></td>
-              <td align="left" valign="top">Generously proportioned roll arms flare outward for a fashionable silhouette.</td>
-            </tr>
-            <tr>
-              <td align="left" valign="top"></td>
-              <td align="left" valign="top">Easy-care microfiber is ideal for busy family rooms and other high-traffic areas.</td>
-            </tr>
-            <tr>
-              <td align="left" valign="top">Cleaning Code:</td>
-              <td align="left" valign="top">S. (Solvent or dry cleaning products): Spot clean using a mild water-free solvent or dry cleaning product. Clean only in a well-ventilated room and avoid any product containing Carbon Tetrachloride any other toxic materials. (Petroleum distillate based products like Energine, Carbona or Renuzit may be used). Use of water based or detergent-based solvent cleaners may cause excessive shrinking and cause water stains. (These can become permanent and unable to be removed with solvent cleaning agents.)</td>
-            </tr>
-            <tr>
-              <td align="left" valign="top">Construction:</td>
-              <td align="left" valign="top">Frame is built from solid hardwood and engineered wood products.</td>
-            </tr>
-            <tr>
-              <td align="left" valign="top">Cushions:</td>
-              <td align="left" valign="top">Seat cushions are built with 1.8-lb. density foam, wrapped in 100% polyester Dacron fiber.</td>
-            </tr>
-            <tr>
-              <td align="left" valign="top">Fabric Content:</td>
-              <td align="left" valign="top">100% polyester.</td>
-            </tr>
-            <tr>
-              <td align="left" valign="top">Pillows:</td>
-              <td align="left" valign="top">Sofa features two solid toss pillows and two accent pillows.</td>
-            </tr>
-            <tr>
-              <td align="left" valign="top">Springs:</td>
-              <td align="left" valign="top">Eight-gauge steel, zigzag seat springs are reinforced with tie wires.</td>
-            </tr>
+                <tr>
+                <td align="left" valign="top"> <% detail %>:</td>
+                </tr>
             </tbody>
+            <%end%>
           </table>
         </div>
         <div class="clearfix"></div>
-
-        <div class="edit-link"><a class="post-edit-link" href="http://www.lant.it/wp-admin/post.php?post=437&amp;action=edit" title="Edit Page">Edit Page</a></div>
       </div>
 
     </article>
@@ -120,116 +75,11 @@
 </section>
 <!-- end main-container -->
 
-
-
-<!-- footer -->
-<footer id="footer">
-
-  <div class="footer-inner">
-
-    <div id="footer-wrap" class="container">
-
-      <!-- footer widget -->
-      <div class="sixteen columns">
-        <section class="widget widget_text">
-          <h3 class="widget-title"><span>Get In Touch</span></h3>
-          <div class="textwidget">
-            <strong>Milan, Italy</strong>
-            <div class="asc-contact address">Piazza Leonardo Da Vinci, 36, Milano, MI, Italia</div>
-            <div class="asc-contact phone">+39 388872712   or   +39 388872434</div>
-            <div class="asc-contact mail"><a href="mailto:info@jcldesign.com">www.jcldesign.com</a></div>
-          </div>
-        </section>
-      </div>
-      <!-- end footer widget -->
-
-    </div>
-
-    <div id="copyright" class="container">
-
-      <div class="sixteen columns">
-
-        <div class="five columns alpha">
-          JCL Design © 2012. Theme by JCL Design                     </div>
-
-        <div class="five columns omega far-edge">
-          <div class="asc-social"><a class="RSS" href="http://www.lant.it/?feed=rss2" title="RSS">RSS</a></div>                    </div>
-
-      </div>
-
-    </div>
-
-  </div>
-
-</footer>
-<!-- end footer -->
-
 </div>
 <!-- end .wrap -->
 
 <div class="scrollTop" style="display: none;">
   <a href="javascript:void(0);">Scroll to Top</a>
 </div>
-
-<script type="text/javascript" src="http://www.lant.it/wp-includes/js/admin-bar.min.js?ver=3.5.1"></script>
-<script type="text/javascript" src="http://www.lant.it/wp-content/plugins/ajax-event-calendar/js/jquery.fullcalendar.min.js?ver=1.5.3"></script>
-<script type="text/javascript" src="http://www.lant.it/wp-content/plugins/ajax-event-calendar/js/jquery.simplemodal.1.4.3.min.js?ver=1.4.3"></script>
-<script type="text/javascript" src="http://www.lant.it/wp-content/plugins/ajax-event-calendar/js/jquery.mousewheel.min.js?ver=3.0.6"></script>
-<script type="text/javascript" src="http://www.lant.it/wp-content/plugins/ajax-event-calendar/js/jquery.jgrowl.min.js?ver=1.2.5"></script>
-<script type="text/javascript" src="http://www.lant.it/wp-includes/js/jquery/ui/jquery.ui.core.min.js?ver=1.9.2"></script>
-<script type="text/javascript" src="http://www.lant.it/wp-includes/js/jquery/ui/jquery.ui.datepicker.min.js?ver=1.9.2"></script>
-<script type="text/javascript">
-    /* <![CDATA[ */
-    var custom = {"is_rtl":"","locale":"en","start_of_week":"1","step_interval":"30","datepicker_format":"mm\/dd\/yy","is24HrTime":"","show_weekends":"1","agenda_time_format":"h:mmt{ - h:mmt}","other_time_format":"h:mmt","axis_time_format":"h:mmt","limit":"0","today":"Today","all_day":"All Day","years":"Years","year":"Year","months":"Months","month":"Month","weeks":"Weeks","week":"Week","days":"Days","day":"Day","hours":"Hours","hour":"Hour","minutes":"Minutes","minute":"Minute","january":"January","february":"February","march":"March","april":"April","may":"May","june":"June","july":"July","august":"August","september":"September","october":"October","november":"November","december":"December","jan":"Jan","feb":"Feb","mar":"Mar","apr":"Apr","may_short":"May","jun":"Jun","jul":"Jul","aug":"Aug","sep":"Sep","oct":"Oct","nov":"Nov","dec":"Dec","sunday":"Sunday","monday":"Monday","tuesday":"Tuesday","wednesday":"Wednesday","thursday":"Thursday","friday":"Friday","saturday":"Saturday","sun":"Sun","mon":"Mon","tue":"Tue","wed":"Wed","thu":"Thu","fri":"Fri","sat":"Sat","close_event_form":"Close Event Form","loading_event_form":"Loading Event Form...","update_btn":"Update","delete_btn":"Delete","category_type":"Category type","hide_all_notifications":"hide all notifications","has_been_created":"has been created.","has_been_modified":"has been modified.","has_been_deleted":"has been deleted.","add_event":"Add Event","edit_event":"Edit Event","delete_event":"Delete this event?","loading":"Loading Events...","category_filter_label":"Category filter label","repeats_every":"Repeats Every","until":"Until","success":"Success!","whoops":"Whoops!","ajaxurl":"http:\/\/www.lant.it\/wp-admin\/admin-ajax.php","editable":""};
-    /* ]]> */
-</script>
-<script type="text/javascript" src="http://www.lant.it/wp-content/plugins/ajax-event-calendar/js/jquery.init_show_calendar.js?ver=1.0.4"></script>
-<script type="text/javascript">
-    (function() {
-        var request, b = document.body, c = 'className', cs = 'customize-support', rcs = new RegExp('(^|\\s+)(no-)?'+cs+'(\\s+|$)');
-
-        request = true;
-
-        b[c] = b[c].replace( rcs, ' ' );
-        b[c] += ( window.postMessage && request ? ' ' : ' no-' ) + cs;
-    }());
-</script>
-<div id="wpadminbar" class="" role="navigation">
-  <a class="screen-reader-shortcut" href="#wp-toolbar" tabindex="1">Skip to toolbar</a>
-  <div class="quicklinks" id="wp-toolbar" role="navigation" aria-label="Top navigation toolbar." tabindex="0">
-    <ul id="wp-admin-bar-root-default" class="ab-top-menu">
-      <li id="wp-admin-bar-wp-logo" class="menupop"><a class="ab-item" aria-haspopup="true" href="http://www.lant.it/wp-admin/about.php" title="About WordPress"><span class="ab-icon"></span></a><div class="ab-sub-wrapper"><ul id="wp-admin-bar-wp-logo-default" class="ab-submenu">
-        <li id="wp-admin-bar-about"><a class="ab-item" href="http://www.lant.it/wp-admin/about.php">About WordPress</a>		</li></ul><ul id="wp-admin-bar-wp-logo-external" class="ab-sub-secondary ab-submenu">
-        <li id="wp-admin-bar-wporg"><a class="ab-item" href="http://wordpress.org/">WordPress.org</a>		</li>
-        <li id="wp-admin-bar-documentation"><a class="ab-item" href="http://codex.wordpress.org/">Documentation</a>		</li>
-        <li id="wp-admin-bar-support-forums"><a class="ab-item" href="http://wordpress.org/support/">Support Forums</a>		</li>
-        <li id="wp-admin-bar-feedback"><a class="ab-item" href="http://wordpress.org/support/forum/requests-and-feedback">Feedback</a>		</li></ul></div>		</li>
-      <li id="wp-admin-bar-site-name" class="menupop"><a class="ab-item" aria-haspopup="true" href="http://www.lant.it/wp-admin/">JCL_InteriorDesign</a><div class="ab-sub-wrapper"><ul id="wp-admin-bar-site-name-default" class="ab-submenu">
-        <li id="wp-admin-bar-dashboard"><a class="ab-item" href="http://www.lant.it/wp-admin/">Dashboard</a>		</li></ul><ul id="wp-admin-bar-appearance" class="ab-submenu">
-        <li id="wp-admin-bar-themes"><a class="ab-item" href="http://www.lant.it/wp-admin/themes.php">Themes</a>		</li>
-        <li id="wp-admin-bar-customize" class="hide-if-no-customize"><a class="ab-item" href="http://www.lant.it/wp-admin/customize.php?url=http%3A%2F%2Fwww.lant.it%2F%3Fpage_id%3D437">Customize</a>		</li>
-        <li id="wp-admin-bar-widgets"><a class="ab-item" href="http://www.lant.it/wp-admin/widgets.php">Widgets</a>		</li>
-        <li id="wp-admin-bar-menus"><a class="ab-item" href="http://www.lant.it/wp-admin/nav-menus.php">Menus</a>		</li>
-        <li id="wp-admin-bar-background"><a class="ab-item" href="http://www.lant.it/wp-admin/themes.php?page=custom-background">Background</a>		</li></ul></div>		</li>
-      <li id="wp-admin-bar-updates"><a class="ab-item" href="http://www.lant.it/wp-admin/update-core.php" title="1 WordPress Update, 1 Plugin Update, 1 Theme Update"><span class="ab-icon"></span><span class="ab-label">3</span><span class="screen-reader-text">1 WordPress Update, 1 Plugin Update, 1 Theme Update</span></a>		</li>
-      <li id="wp-admin-bar-comments"><a class="ab-item" href="http://www.lant.it/wp-admin/edit-comments.php" title="0 comments awaiting moderation"><span class="ab-icon"></span><span id="ab-awaiting-mod" class="ab-label awaiting-mod pending-count count-0">0</span></a>		</li>
-      <li id="wp-admin-bar-new-content" class="menupop"><a class="ab-item" aria-haspopup="true" href="http://www.lant.it/wp-admin/post-new.php" title="Add New"><span class="ab-icon"></span><span class="ab-label">New</span></a><div class="ab-sub-wrapper"><ul id="wp-admin-bar-new-content-default" class="ab-submenu">
-        <li id="wp-admin-bar-new-post"><a class="ab-item" href="http://www.lant.it/wp-admin/post-new.php">Post</a>		</li>
-        <li id="wp-admin-bar-new-media"><a class="ab-item" href="http://www.lant.it/wp-admin/media-new.php">Media</a>		</li>
-        <li id="wp-admin-bar-new-page"><a class="ab-item" href="http://www.lant.it/wp-admin/post-new.php?post_type=page">Page</a>		</li>
-        <li id="wp-admin-bar-new-work"><a class="ab-item" href="http://www.lant.it/wp-admin/post-new.php?post_type=work">Work</a>		</li>
-        <li id="wp-admin-bar-new-faq"><a class="ab-item" href="http://www.lant.it/wp-admin/post-new.php?post_type=faq">FAQ</a>		</li>
-        <li id="wp-admin-bar-new-slider"><a class="ab-item" href="http://www.lant.it/wp-admin/post-new.php?post_type=slider">Slider</a>		</li>
-        <li id="wp-admin-bar-new-user"><a class="ab-item" href="http://www.lant.it/wp-admin/user-new.php">User</a>		</li>
-        <li id="wp-admin-bar-slider"><a class="ab-item" href="http://www.lant.it/wp-admin/admin.php?page=wowslider-add-new">Slider</a>		</li></ul></div>		</li>
-      <li id="wp-admin-bar-edit"><a class="ab-item" href="http://www.lant.it/wp-admin/post.php?post=437&amp;action=edit">Edit Page</a>		</li></ul><ul id="wp-admin-bar-top-secondary" class="ab-top-secondary ab-top-menu">
-    <li id="wp-admin-bar-search" class="admin-bar-search"><div class="ab-item ab-empty-item" tabindex="-1"><form action="http://www.lant.it/" method="get" id="adminbarsearch"><input class="adminbar-input" name="s" id="adminbar-search" type="text" value="" maxlength="150"><input type="submit" class="adminbar-button" value="Search"></form></div>		</li>
-    <li id="wp-admin-bar-my-account" class="menupop with-avatar"><a class="ab-item" aria-haspopup="true" href="http://www.lant.it/wp-admin/profile.php" title="My Account">Howdy, julia malovi<img alt="" src="http://1.gravatar.com/avatar/762819ed41fc3a56d5fc3ff521679550?s=16&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D16&amp;r=G" class="avatar avatar-16 photo" height="16" width="16"></a><div class="ab-sub-wrapper"><ul id="wp-admin-bar-user-actions" class="ab-submenu">
-      <li id="wp-admin-bar-user-info"><a class="ab-item" tabindex="-1" href="http://www.lant.it/wp-admin/profile.php"><img alt="" src="http://1.gravatar.com/avatar/762819ed41fc3a56d5fc3ff521679550?s=64&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D64&amp;r=G" class="avatar avatar-64 photo" height="64" width="64"><span class="display-name">julia malovi</span><span class="username">julia</span></a>		</li>
-      <li id="wp-admin-bar-edit-profile"><a class="ab-item" href="http://www.lant.it/wp-admin/profile.php">Edit My Profile</a>		</li>
-      <li id="wp-admin-bar-logout"><a class="ab-item" href="http://www.lant.it/wp-login.php?action=logout&amp;_wpnonce=347730362c">Log Out</a>		</li></ul></div>		</li></ul>			</div>
-  <a class="screen-reader-shortcut" href="http://www.lant.it/wp-login.php?action=logout&amp;_wpnonce=347730362c">Log Out</a>
-</div>
-
 
 </body>
