@@ -12,7 +12,6 @@ class AdminController < ApplicationController
   end
 
   def homeProduct
-
   end
 
   def partner

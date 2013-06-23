@@ -145,12 +145,12 @@ module Rails
 
       # Create a new Rakefile with the provided code (either in a block or a string).
       #
-      #   rakefile("bootstrap.rake") do
+      #   rakefile("bootstrap.css.rake") do
       #     project = ask("What is the UNIX name of your project?")
       #
       #     <<-TASK
       #       namespace :#{project} do
-      #         task :bootstrap do
+      #         task :bootstrap.css do
       #           puts "I like boots!"
       #         end
       #       end
