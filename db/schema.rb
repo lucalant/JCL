@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130622174444) do
+ActiveRecord::Schema.define(version: 20130623115343) do
 
   create_table "companies", force: true do |t|
     t.string   "name"
@@ -83,13 +83,19 @@ ActiveRecord::Schema.define(version: 20130622174444) do
     t.string   "introduction"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.boolean  "top",                       default: false,            null: false
-    t.string   "name",          limit: nil, default: "name",           null: false
-    t.string   "designer",      limit: nil, default: "designer",       null: false
-    t.string   "partner_event", limit: nil, default: "partner_client", null: false
-    t.string   "top_client",    limit: nil, default: "top_client",     null: false
-    t.string   "category",      limit: nil, default: "category",       null: false
-    t.string   "room",          limit: nil
+    t.boolean  "top",           default: false,            null: false
+    t.string   "name",          default: "name",           null: false
+    t.string   "partner_event", default: "partner_client", null: false
+    t.string   "top_client",    default: "top_client",     null: false
+    t.string   "category",      default: "category",       null: false
+    t.string   "room"
+  end
+
+  create_table "home_products_designers", force: true do |t|
+    t.integer  "home_product_id"
+    t.integer  "designer_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "home_products_distributions", force: true do |t|
@@ -147,6 +153,7 @@ ActiveRecord::Schema.define(version: 20130622174444) do
     t.string   "text"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "designer_id"
   end
 
   create_table "workspaces_distributions", force: true do |t|
