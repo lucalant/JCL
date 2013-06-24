@@ -20,7 +20,7 @@
         <%@all_designers.each do |designer|%>
             <%= link_to designer_about_path(:id => designer.id), {:class => "more-link"} do%>
                 <p><%=designer.name%> <%=designer.surname%></p></br>
-                <p> <%= image_tag (designer.img_url) %>  </p>
+                <p> <%= image_tag (designer.img_url), :style => "width:300px;height:250px", :class => 'scale-with-grid' %>  </p>
             <% end %>
         <% end %>
         <div class="asc-frame">
