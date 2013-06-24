@@ -24,7 +24,16 @@ class HomeProductsController < ApplicationController
   end
 
   def new_home_products
+    @home_product = HomeProduct.new(params[:home_product])
+    respond_to do |format|
+    if @home_product.save
+      format.html { redirect_to pages_admin_path, :notice => 'Product was successfully created.' }
+    else
+      format.html { render :action => "new_home" }
+    end
+    end
   end
+
 
   def top_home_products
     @top_home_product = HomeProduct.where('top = "t"').order('title ASC')
@@ -75,7 +84,7 @@ class HomeProductsController < ApplicationController
                 @i = hash[@home_product]
                 @m = @p.count
 
-              if (@i == @m )
+              if (@i == @m-1 )
                  @p[0].id
               else
                  @p[@i.to_i + 1].id
@@ -88,7 +97,7 @@ class HomeProductsController < ApplicationController
                  @i = hash[@home_product]
                  @m = @p.count
 
-                 if (@i == @m )
+                 if (@i == @m-1 )
                    @p[0].id
                  else
                    @p[@i.to_i + 1].id
@@ -107,8 +116,8 @@ class HomeProductsController < ApplicationController
                   @i = hash[@home_product]
                   @m = @p.count
 
-                  if  (@i == 0 )
-                     @p[@m - 1].id
+                  if  (@i == 1 )
+                     @p[@m - 2].id
                   else
                      @p[@i.to_i - 1].id
                   end
@@ -119,8 +128,8 @@ class HomeProductsController < ApplicationController
                  @i = hash[@home_product]
                  @m = @p.count
 
-                 if  (@i == 0 )
-                   @p[@m - 1].id
+                 if  (@i == 1 )
+                   @p[@m - 2].id
                  else
                    @p[@i.to_i - 1].id
                  end
@@ -132,37 +141,7 @@ class HomeProductsController < ApplicationController
   end
 
 
-
-  def all_rooms
-    @roomList = Array('bedroom','dining room','studio','living room','loft')
-    @roomIndex=case
-                 when @room == 'bedroom'
-                   1
-                 when   @room == 'dining room'
-                   2
-                 when   @room == 'studio'
-                   3
-                 when   @room == 'living room'
-                   4
-                 else
-                   5
-               end
-    if  (@roomIndex == 1 )
-      @rooml = @roomList[5]
-      redirect_to home_product_by_room_path(@rooml)
-    else
-      @rooml = @roomList[@roomIndex- 1]
-      redirect_to home_product_by_room_path(@rooml)
-    end
-    if  (@roomIndex == 5 )
-      @roomr = @roomList[1]
-      redirect_to home_product_by_room_path(@roomr)
-    else
-      @roomr = @roomList[@roomIndex+ 1]
-      redirect_to home_product_by_room_path(@roomr)
-    end
-
-  end
+  #per eventuale implementazione di group links anche tra le stanze
 
 
 

@@ -1,2 +1,40 @@
-<h1>HomeProducts#home_distribution</h1>
-<p>Find me in app/views/home_products/home_distribution.html.erb</p>
+<body class="page page-id-760 page-template-default logged-in admin-bar custom-background customize-support">
+
+<div id="azure-wrapper">
+  <section id="pre-content">
+    <div class="pre-content-inner">
+      <div class="container">
+        <div class="sixteen columns">
+          <div class="space-title">
+            <h1 span class="page-title"> Distribution points for <%=link_to @home_product,home_products_path(:id => @home_product.id)%></h1>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- main-container -->
+  <section id="main-container" class="container" role="main">
+    <div id="main" class="sixteen columns content">
+
+      <!-- post entry -->
+      <article id="post-760" class="post-760 page type-page status-publish hentry page-single clearfix">
+        <div class="transition-content">
+          <div class="asc-columns ">
+            <div class="asc-frame">
+              <% @home_product_distr_list.id do |id| %>
+              <p><strong><a class="transition-link" ><span><%= link_to @home_product_distr_list.name, distribution_path(:id => id ) %>&nbsp;</span></a></strong></p>
+              <%end%>
+            </div>
+          </div>
+        </div>
+       <section>
+        <%= link_to  room_home_products_path, {:class => "asc-button small gray"} do%> <span>Back to <%=@home_product,home_products_path(:id => @home_product.id)%></span><%end%>
+      </section>
+      </article>
+      <!-- end post entry -->
+    </div>
+  </section>
+</div>
+<!-- end main-container -->
+</body>
