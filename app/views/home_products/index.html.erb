@@ -37,18 +37,20 @@
           </div>
           <div class="clearfix"></div>
           <div class="asc-divider divider"></div>
-          <% if @designer !=nil %>
-          <p>Realised by <a class="more-link"><span><span style="color: red; font-size: 13px; line-height: 19px;">&nbsp<%= @hdesigner %> &nbsp;</span></span></a></p>
+          <% if @designer %>
+          <p> Realised by <a class="more-link"><span><span style="color: red; font-size: 13px; line-height: 19px;">&nbsp<%= @hdesigner %> &nbsp;</span></span></a></p>
           <% end %>
 
           <p><a class="more-link"><span>&nbsp;<span style="color: red; font-size: 13px; line-height: 19px;"><%=link_to "Where to buy it",home_product_distribution_path(:id => @home_product.id) %> </span> </span></a></p>
           <% if @home_product.event %>
-          <p>Presented at <a class="more-link" ><span><span style="color: red; font-size: 13px; line-height: 19px;"> Event <%= @home_product.event %> </span> </span></a> </p>
+          <p>Presented at <a class="more-link" ><span><span style="color: red; font-size: 13px; line-height: 19px;"> <%= @home_product.event %> </span> </span></a> </p>
           <% end%>
           <div class="clearfix"></div>
           <div class="asc-divider divider"></div>
           <span>You are in the category<a class="more-link"><span>&nbsp;<span style="color:#ccffcc;"><%=link_to @home_product.category,home_products_by_type_path(:id => @home_product.id ,:category => @home_product.category)%> </span></span></a>
         </span>&nbsp;</span></a>&nbsp;in&nbsp;<a class="more-link"><span>&nbsp;<span style="color:#ccffcc;">Home Products </span>&nbsp;</span></a></p> </span>
+          <div class="clearfix"></div>
+          <div class="asc-divider divider"></div>
           <p><a  class="asc-button small gray"><span> <%= link_to "Previous", home_products_path(:id => @left , :room => @home_product.room)%> </span></a> <strong></strong> <a  class="asc-button small gray"><span> <%= link_to "Next",home_products_path(:id => @right,:room=> @home_product.room) %></span></a></p>
           <p><a  class="asc-button small light"><span> <%= link_to @home_product.category, home_products_by_type_path(:id => @home_product.id ,:category => @home_product.category) %> </span></a></p></span>
         </div>
