@@ -7,7 +7,25 @@ class DesignerController < ApplicationController
 
   end
 
+  def home_products_of_designer
+    @designer = Designer.find(params[:id])
+    @home_product_designer_list = HomeProductsDesigners.where("designer_id = ?", params[:id])
+    if @home_product_designer_list != nil
+      @home_products = Array.new
+      @home_product_designer_list.each do |home_product_designer|
+        @home_product = HomeProduct.find(home_product_designer.home_product_id)
+        @home_products.push @home_product
+      end
+    end
+  end
+
+  def workspaces_of_designer
+    @designer = Designer.find(params[:id])
+    @workspaces = Workspace.where("designer_id = ?", params[:id])
+  end
+
   def about
+    @all_designers = Designer.all
     @designer = Designer.find(params[:id])
     @designerImage = "/designer/"+ @designer.img_url
     @event_designer_list = EventsDesigners.where("designer_id = ?", params[:id])
@@ -18,25 +36,6 @@ class DesignerController < ApplicationController
         @events.push @event
       end
     end
-    /.*
-    @home_product_designer_list = HomeProductDesigners.where("designer_id = ?", params[:id])
-    if @home_product_designer_list != nil
-      @home_products = Array.new
-      @home_product_designer_list.each do |home_product_designer|
-        @home_product = Event.find(home_product_designer.home_product_id)
-        @home_products.push @home_product
-      end
-    end
-
-    @workspace_designer_list = WorkspaceDesigners.where("designer_id = ?", params[:id])
-    if @workspace_designer_list != nil
-      @workspaces = Array.new
-      @workspace_designer_list.each do |workspace_designer|
-        @workspace = Event.find(workspace_designer.workspace_id)
-        @workspaces.push @workspace
-      end
-    end
-     *./
   end
 
 

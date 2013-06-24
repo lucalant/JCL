@@ -21,7 +21,7 @@
 
           <p>Collaborated at
             <%=@events.each do |event|%>
-                <%= link_to event.name, about_event_path(:id => event.id), {:class => "more-link"} %>,
+                <%= link_to event.name, event_media_path(:id => event.id), {:class => "more-link"} %>,
             <% end %>
           </p>
 

@@ -1,0 +1,33 @@
+<section id="pre-content">
+  <div class="pre-content-inner">
+    <div class="container">
+      <div class="sixteen columns">
+        <div class="space-title">
+          <h1 class="page-title">Workspaces of designer <%=@designer.name%> <%=@designer.surname%>.</h1>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="main-container" class="container" role="main">
+  <div id="main" class="sixteen columns content">
+    <!-- post entry -->
+    <div class="post-content">
+      <div class="asc-columns one_third">
+
+        <div class="asc-columns one_half last">
+          <p>
+            <%=@workspaces.each do |workspace|%>
+                <%= link_to designers_workspaces_path(:id => @designer.id), {:class => "more-link"} do%>
+                    <%= workspace.presentation%> </br>
+                    <%= image_tag ("/workspace/"+workspace.img_url) %>
+                 <% end %>
+            <% end %>
+          </p>
+        <div class="clearfix"></div>
+        </div>
+      </div>
+      </div>
+  </div>
+</section>

@@ -1,16 +1,14 @@
 
 class EventController < ApplicationController
   def index
+    @event = Event.find(params[:id])
   end
 
-  def show
+  def about
+    @event = Event.find(params[:id])
   end
 
   def new
-  end
-
-  def show
-
   end
 
   def create

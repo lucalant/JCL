@@ -1,2 +1,62 @@
-<h1>Distribution#index</h1>
-<p>Find me in app/views/distribution/index.html.erb</p>
+<section id="pre-content">
+  <div class="pre-content-inner">
+    <div class="container">
+      <div class="sixteen columns">
+        <div class="space-title">
+          <h1 class="page-title"><%=@distribution.name%>.</h1>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="main-container" class="container" role="main">
+  <div id="main" class="sixteen columns content">
+
+    <article>
+      <div class="post-content">
+        <div class="asc-columns one_third">
+          <div class="asc-frame">
+            <p><%= image_tag (@distributionImage), :style => "width='300' height='225'" %></p>
+          </div>
+        </div>
+        <div class="asc-columns one_half last">
+          <h3><strong>Presentation</strong></h3>
+          <p><%= @distribution.presentation %></p>
+          <div class="clearfix"></div>
+          <div class="asc-divider divider"></div>
+
+          <p>Offers <%= link_to 'Home products', distributions_home_products_path(:id => @distribution.id), {:class => "more-link"} %>
+          </p>
+          <p>Offers <%= link_to 'Workspaces', distributions_workspaces_path(:id => @distribution.id), {:class => "more-link"} %>
+          </p>
+
+          <div class="clearfix"></div>
+          <div class="asc-divider divider"></div>
+
+          <%= link_to distribution_map_path(:id => @distribution.id), {:class => "more-link"} do%>
+            <h1><span style="color: #993366;"><strong>Map</strong></span></h1>
+          <% end %>
+
+          <div class="clearfix"></div>
+          <div class="asc-divider divider"></div>
+
+          <p>You are in the category
+            <%= link_to 'Showrooms', distribution_showrooms_path, {:class => "more-link"} %>
+          </p>
+          <p>    <% if @distribution.id > 1 %>
+                <%= link_to 'Previous', distribution_path(:id => @distribution.id-1), {:class => "asc-button small gray"} %>&nbsp;<strong>……</strong>&nbsp;
+            <% end %>
+            <% if @distribution.id<@all_distributions.size%>
+                <%= link_to 'Next', distribution_path(:id => @distribution.id+1), {:class => "asc-button small gray"} %>
+            <% end %>
+          </p>
+          <p>
+            <%= link_to 'All Showrooms', distribution_showrooms_path, {:class => "asc-button small light"} %>
+          </p>
+        </div>
+        <div class="clearfix"></div>
+      </div>
+    </article>
+  </div>
+</section>
