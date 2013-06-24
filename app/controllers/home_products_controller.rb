@@ -41,6 +41,7 @@ class HomeProductsController < ApplicationController
 
   def index
     @home_product = HomeProduct.find(params[:id])
+
     @name =  params[:name]
     @img = params[:images]
     @txt = params[:text]
@@ -48,7 +49,8 @@ class HomeProductsController < ApplicationController
     @top = params[:top]
     @cat = params[:category]
     @room = params[:room]
-    @designer = params[:designer]
+
+    #@designerId = hash[@designer]
 
     if @designer
       @par = HomeProduct.find(@designer)
@@ -163,7 +165,6 @@ class HomeProductsController < ApplicationController
         @distribution = Distribution.find(homep_distr.distribution_id)
         @distributions.push @distribution
       end
-    end
 
 
   end
@@ -172,6 +173,8 @@ end
 def home_products_params
   params.require(:name,:introduction,:images,:text,:home_product_id,:room,:top,:type).permit(:eid, :did,:top_client_id,:pid)
 end
+end
+
 
 
 
