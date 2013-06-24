@@ -145,8 +145,8 @@ JCLdesign::Application.routes.draw do
   match 'distribution_showrooms' => 'distribution#showrooms', :via => :get
   match 'distribution_assistantPoints' => 'distribution#assistant_points', :via => :get
   match 'distribution_types' => 'distribution#types', :via => :get
-  match 'distributions_home_products' => 'designer#home_products_of_distribution', :via => :get
-  match 'distributions_workspaces' => 'designer#workspaces_of_distribution', :via => :get
+  match 'distributions_home_products' => 'distribution#home_products_of_distribution', :via => :get
+  match 'distributions_workspaces' => 'distribution#workspaces_of_distribution', :via => :get
 
 
   resources :event, :only => [:index, :media,:all_events ,:events_by_month, :about]
