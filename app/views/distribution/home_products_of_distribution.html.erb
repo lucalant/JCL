@@ -3,7 +3,7 @@
     <div class="container">
       <div class="sixteen columns">
         <div class="space-title">
-          <h1 class="page-title">Workspaces in <%=@distribution.name%>.</h1>
+          <h1 class="page-title">Workspaces in <%=@distribution.name%></h1>
         </div>
       </div>
     </div>
@@ -18,10 +18,10 @@
 
         <div class="asc-columns one_half last">
           <p>
-            <%@home_products.each do |home_product|%>
-                <%= link_to distributions_home_products_path(:id => @distribution.id), {:class => "more-link"} do%>
-                    <%= home_product.name%> </br>
-                    <%= image_tag (home_product.images) %>
+            <%@distribution.each do |distr|%>
+                <%= link_to distributions_home_products_path(:id => @home_product.id), {:class => "more-link"} do%>
+                    <%= distr.name%> </br>
+                    <%= image_tag (distr.img_url) %>
                  <% end %>
             <% end %>
           </p>
