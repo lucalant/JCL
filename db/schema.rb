@@ -92,6 +92,7 @@ ActiveRecord::Schema.define(version: 20130624003328) do
     t.string   "room"
     t.string   "event",         limit: nil
     t.string   "designer",      limit: nil
+    t.boolean  "NEW"
   end
 
   create_table "home_products_designers", force: true do |t|
