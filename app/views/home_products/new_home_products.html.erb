@@ -58,8 +58,8 @@
             <%= f.check_box :top %>
           </div>
           <div class="field"><br>
-            <%= f.label :new %>
-            <%= f.check_box :new %>
+            <%= f.label :NEW %>
+            <%= f.check_box :NEW %>
           </div>
           <div class="field"><br>
             <%= f.label :created_at %>
@@ -85,12 +85,13 @@
           <div class="actions"><br>
             <%= f.submit %>
           </div>
-          <%= link_to "Back to Admin page", pages_admin_path , {:class => "more-link"}%>
+          <%= link_to "Back to Admin page", admins_path , {:class => "more-link"}%>
           </div>
           </section>
-          </div>
+      <%end%>
+  </div>
           <!-- end main-container -->
-          </body>
+</body>
 
 
 
