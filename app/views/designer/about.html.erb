@@ -18,9 +18,9 @@
         <div class="asc-frame">
           <p> <%= image_tag (@designerImage) %>  </p>
         </div>
-          <% if @events !=nil %>
+          <% if !@events.empty? %>
           <p>Collaborated at
-            <%=@events.each do |event|%>
+            <% @events.each do |event|%>
                 <%= link_to event.name, about_event_path(:id => event.id), {:class => "more-link"} %>,
             <% end %>
           </p>

@@ -18,7 +18,7 @@
 
         <div class="asc-columns one_half last">
           <p>
-            <%=@home_products.each do |home_product|%>
+            <%@home_products.each do |home_product|%>
                 <%= link_to designers_home_products_path(:id => @designer.id), {:class => "more-link"} do%>
                     <%= home_product.name%> </br>
                     <%= image_tag (home_product.images) %>

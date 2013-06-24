@@ -18,7 +18,7 @@
 
         <div class="asc-columns one_half last">
           <p>
-            <%=@workspaces.each do |workspace|%>
+            <%@workspaces.each do |workspace|%>
                 <%= link_to distributions_workspaces_path(:id => @distribution.id), {:class => "more-link"} do%>
                     <%= workspace.presentation%> </br>
                     <%= image_tag (workspace.img_url) %>
