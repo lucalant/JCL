@@ -88,8 +88,8 @@ JCLdesign::Application.routes.draw do
 
 
   resources :company, :only => [:history, :identity]
-  match 'identity' => 'company#identity', :via => :get
-  match 'history' => 'company#history', :via => :get
+  match 'identity' => 'company#Identity', :via => :get
+  match 'history' => 'company#History', :via => :get
 
   resources :partner, :only => [:index, :images, :introduction, :contacts]
 
