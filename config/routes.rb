@@ -119,11 +119,13 @@ JCLdesign::Application.routes.draw do
   match 'home_products' => 'home_products#index', :via => :get
 
 
-  resources :designer, :only => [:index, :about,:works]
+  resources :designer, :only => [:index, :about,:works, :home_products_of_designer, :workspaces_of_designer]
   match 'designers' => 'designer#index', :via => :get
-  match 'designer/about/:id' => 'designer#about', :via => :get
-  match 'designers/works/:id' => 'designer#works', :via => :get
-  match 'works' => 'designer#works', :via => :get
+  match 'designer_about' => 'designer#about', :via => :get
+  match 'designers_works' => 'designer#works', :via => :get
+  match 'designers_home_products' => 'designer#home_products_of_designer', :via => :get
+  match 'designers_workspaces' => 'designer#workspaces_of_designer', :via => :get
+
 
   resources :service, :only => [:assistance, :interior_design, :personalization, :repair, :show]
   match 'services' => 'service#show', :via => :get
@@ -136,20 +138,22 @@ JCLdesign::Application.routes.draw do
   match 'top_client' => 'top_client#show', :via => :get
   match 'all_top_clients' => 'top_clients#all_top_clients', :via => :get
 
-  resources :distribution, :only => [:index, :map, :retail_shops,:showrooms,:assistant_points,:types]
+  resources :distribution, :only => [:index, :map, :retail_shops,:showrooms,:assistant_points,:types, :home_products_of_distribution, :workspaces_of_distribution]
   match 'distribution' => 'distribution#index', :via => :get
   match 'distribution_map' => 'distribution#map', :via => :get
   match 'distribution_retailsShops_' => 'distribution#retail_shops', :via => :get
   match 'distribution_showrooms' => 'distribution#showrooms', :via => :get
   match 'distribution_assistantPoints' => 'distribution#assistant_points', :via => :get
   match 'distribution_types' => 'distribution#types', :via => :get
+  match 'distributions_home_products' => 'designer#home_products_of_distribution', :via => :get
+  match 'distributions_workspaces' => 'designer#workspaces_of_distribution', :via => :get
 
 
-  resources :event, :only => [:index, :media,:all_events ,:events_by_month]
+  resources :event, :only => [:index, :media,:all_events ,:events_by_month, :about]
   match 'events' => 'event#index', :via => :get
-  match '/events/:id' => 'event#show', :via => :get
+  match 'about_event' => 'event#about', :via => :get
   match 'events_media' => 'event#media', :via => :get
-  match 'events_all_events/' => 'event#all_events', :via => :get
+  match 'events_all_events' => 'event#all_events', :via => :get
   match 'events_events_by_month' => 'event#events_by_month', :via => :get
 
   resources :faq, :only => [:text,:form]
