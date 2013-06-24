@@ -73,13 +73,12 @@ JCLdesign::Application.routes.draw do
 
 
 
-  resources :admin, :only => [:index, :company,:designer,:distribution,:event,:homeProduct,:partner,:service,:topClient,:workspace]
+  resources :admin, :only => [:index, :company,:designer,:distribution,:event,:partner,:service,:topClient,:workspace]
   match 'admin' => 'admin#index', :via => :get, :as => :admins
   match 'new_company' => 'admin#company', :via => :get
   match 'new_designer' => 'admin#designer', :via => :get
   match 'new_distribution' => 'admin#distribution', :via => :get
   match 'new_event' => 'admin#event', :via => :get
-  match 'new_homeProduct' => 'admin#homeProduct', :via => :get
   match 'new_partner' => 'admin#partner', :via => :get
   match 'new_service' => 'admin#service', :via => :get
   match 'new_topClient' => 'admin#topClient', :via => :get
@@ -109,7 +108,6 @@ JCLdesign::Application.routes.draw do
 
   resources :home_product, :only => [:index, :new_home_products, :top_home_products, :all_types, :all_rooms, :products_by_room, :home_distribution, :create, :products_by_type]
   match 'top_home_products' => 'home_products#top_home_products', :via => :get
-  match 'new_home_products' => 'home_products#new_home_products', :via => :get
   match 'type_home_products' => 'home_products#all_types', :via => :get
   match 'room_home_products' => 'home_products#all_rooms', :via => :get
   match 'home_products_by_room' => 'home_products#products_by_room', :via => :get
@@ -117,6 +115,7 @@ JCLdesign::Application.routes.draw do
   match 'home_product_distribution' => 'home_products#home_distribution', :via => :get
   match 'home_products_create' => 'home_products#create', :via => :get
   match 'home_products' => 'home_products#index', :via => :get
+  match 'new_home_products' => 'home_products#new_home_products', :via => :get
 
 
   resources :designer, :only => [:index, :about,:works, :home_products_of_designer, :workspaces_of_designer]

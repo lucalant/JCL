@@ -13,7 +13,7 @@
     <div class="sixteen columns header-inner">
       <div class="logo">
         <%= link_to home_path do%>
-            <%= image_tag("logo1.png") %>
+            <%= image_tag ("logo1.png"), :style => "width:140px;height:45px" %>
         <% end %>
       </div>
       <nav id="main-nav">
@@ -31,10 +31,6 @@
               <li><%= link_to 'New Arrivals', new_workspace_path %></li>
               <li><%= link_to 'Top Workstations', top_workspace_path %></li>
               <li><%= link_to'All Collections',collections_path %>
-                <ul>
-                  <li><%= link_to 'Classic', collection_path(:id) %></li>
-                  <li><%= link_to 'Soft', collection_path(:id) %></li>
-                </ul>
               </li>
             </ul>
           </li>
@@ -73,6 +69,8 @@
           <li class="link"> <p class ="nolink" > More... </p>
             <ul class="sub-menu">
               <li class = "link"> <%= link_to 'Contacts', contacts_path %>
+              </li>
+              <li class = "link"> <%= link_to 'Admin', admins_path %>
               </li>
               <li class = "link"><%= link_to 'FAQ', faq_path %>
               </li>

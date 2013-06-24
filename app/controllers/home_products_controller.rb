@@ -148,7 +148,13 @@ class HomeProductsController < ApplicationController
   end
 
 
-  #per eventuale implementazione di group links anche tra le stanze
+  def new_home_products
+    @home_product = HomeProduct.new
+    respond_to do |format|
+      format.html
+      format.json { render :json => @home_product }
+    end
+  end
 
 
 
