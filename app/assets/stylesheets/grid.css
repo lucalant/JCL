@@ -76,7 +76,7 @@
 /* Note: Design for a width of 1152px */
 
 @media only screen and (min-width: 1200px) {
-    .container                                  { width: 1152px; }
+    .container                                  { width: 1250px; }
 
     .container .one.column,
     .container .one.columns                     { width: 42px; }
