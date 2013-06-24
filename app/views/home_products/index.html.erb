@@ -35,12 +35,14 @@
           <div class="asc-frame">
             <p img class="size-medium wp-image-435 alignnone" alt="work-5" width="300" height="174"><%= image_tag(@home_product.images) %></p>
           </div>
-          <% if (@home_product.designer != nil) %>
-          <p>Realised by <a class="more-link"><span><span style="color: red; font-size: 13px; line-height: 19px;">&nbsp<%= @home_product.designer %> &nbsp;</span></span></a></p>
+          <div class="clearfix"></div>
+          <div class="asc-divider divider"></div>
+          <% if @designer !=nil %>
+          <p>Realised by <a class="more-link"><span><span style="color: red; font-size: 13px; line-height: 19px;">&nbsp<%= @hdesigner %> &nbsp;</span></span></a></p>
           <% end %>
 
-          <p><a class="more-link" href="#"><span>&nbsp;<span style="color: red; font-size: 13px; line-height: 19px;"><%=link_to "Where to buy it",home_product_distribution_path(:id => @home_product.id) %> </span> </span></a></p>
-          <% if (@home_product.event)%>
+          <p><a class="more-link"><span>&nbsp;<span style="color: red; font-size: 13px; line-height: 19px;"><%=link_to "Where to buy it",home_product_distribution_path(:id => @home_product.id) %> </span> </span></a></p>
+          <% if @home_product.event %>
           <p>Presented at <a class="more-link" ><span><span style="color: red; font-size: 13px; line-height: 19px;"> Event <%= @home_product.event %> </span> </span></a> </p>
           <% end%>
           <div class="clearfix"></div>
