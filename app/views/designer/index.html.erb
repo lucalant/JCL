@@ -1,2 +1,37 @@
-<h1>Designer#index</h1>
-<p>Find me in app/views/designer/index.html.erb</p>
+<section id="pre-content">
+  <div class="pre-content-inner">
+    <div class="container">
+      <div class="sixteen columns">
+        <div class="space-title">
+          <h1 class="page-title">All designers.</h1>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="main-container" class="container" role="main">
+  <div id="main" class="sixteen columns content">
+    <!-- post entry -->
+    <div class="post-content">
+      <div class="asc-columns one_third">
+
+
+        <%=@all_designers.each do |designer|%>
+            <%= link_to designer_about_path(:id => designer.id), {:class => "more-link"} do%>
+                <p>designer.name designer.surname</p></br>
+                <p> <%= image_tag (designer.img_url) %>  </p>
+            <% end %>
+        <% end %>
+        <div class="asc-frame">
+
+        </div>
+
+
+
+
+      </div>
+
+    </div>
+  </div>
+</section>
