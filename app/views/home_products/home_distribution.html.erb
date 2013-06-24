@@ -1,4 +1,5 @@
-<body class="page page-id-760 page-template-default logged-in admin-bar custom-background customize-support">
+<body class="page page-id-760 page-template-default logged-in admin-bar custom-background customize-support"
+      xmlns="http://www.w3.org/1999/html">
 
 <div id="azure-wrapper">
   <section id="pre-content">
@@ -22,14 +23,17 @@
         <div class="transition-content">
           <div class="asc-columns ">
             <div class="asc-frame">
-              <% @home_product_distr_list.id do |id| %>
-              <p><strong><a class="transition-link" ><span><%= link_to id.name, distribution_path(:id => id.home_product_id ) %>&nbsp;</span></a></strong></p>
+              <% @distributions.each do |id| %>
+              <p><strong><a class="transition-link" ><span><%= link_to id.name, distribution_path(:id => id.id ) %>&nbsp;</span></a></strong></p>
               <%end%>
             </div>
           </div>
         </div>
        <section>
-        <%= link_to  room_home_products_path, {:class => "asc-button small gray"} do%> <span>Back to <%=@home_product, home_products_path(:id => @home_product.id)%></span><%end%>
+        <%= link_to 'Back to rooms',room_home_products_path, {:class => "asc-button small gray"}%> <span>
+                            </br></br>
+
+         Back to product <%=link_to @home_product.name ,home_products_path(:id => @home_product.id), {:class => "asc-button small gray"}%></span>
       </section>
       </article>
       <!-- end post entry -->

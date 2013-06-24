@@ -164,7 +164,7 @@ class HomeProductsController < ApplicationController
   def home_distribution
     @id =params[:id]
     @home_product = HomeProduct.find(@id)
-    @home_product_distr_list = home_distribution.where("home_product = ?", @id )
+    @home_product_distr_list = HomeProductsDistributions.where("home_product_id = ?", @id )
     if @home_product_distr_list !=nil
       @distributions = Array.new
       @home_product_distr_list.each do |homep_distr|
