@@ -13,33 +13,29 @@
 <section id="main-container" class="container" role="main">
   <div id="main" class="sixteen columns content">
     <!-- post entry -->
-      <div class="post-content">
-        <div class="asc-columns one_third">
-          <div class="asc-frame">
-            <p> <%= image_tag (@designerImage), :style => "width='300'; height='199'" %>  </p>
-          </div>
+    <div class="post-content">
+      <div class="asc-columns one_third">
+        <div class="asc-frame">
+          <p> <%= image_tag (@designerImage) %>  </p>
+        </div>
 
           <p>Collaborated at
             <%=@events.each do |event|%>
-                <% link_to event.name, event_path(event), {:class => "more-link"} %>,
+                <%= link_to event.name, about_event_path(:id => event.id), {:class => "more-link"} %>,
             <% end %>
           </p>
 
-         <p>Designed
-            <%=@home_products.each do |home_product|%>
-                <%= link_to home_product.name, home_product_path(home_product), {:class => "more-link"} %>,
-            <% end %>
-          </p>
-          <p>Designed
-            <%=@workspaces.each do |workspace|%>
-                <%= link_to workspace.name, workspace_path(workspace), {:class => "more-link"} %>,
-            <% end %>
-          </p>
+            <p>Designed <%= link_to 'Home products', designers_home_products_path(:id => @designer.id), {:class => "more-link"} %>
+            </p>
+            <p>Designed <%= link_to 'Workspaces', designers_workspaces_path(:id => @designer.id), {:class => "more-link"} %>
+            </p>
+
           <div class="clearfix"></div>
           <div class="asc-divider divider"></div>
 
           <p>
-            <%= link_to works_path, {:class => "more-link"} do%><span> Notorious works of&nbsp;<%=@designer.name%> <%=@designer.surname%>&nbsp;</span><% end %>
+            <%= link_to designer_works_path(:id => @designer.id), {:class => "more-link"} do%><span> Notorious works of&nbsp;<%=@designer.name%> <%=@designer.surname%>&nbsp;</span><% end %>
+
           </p>
           <div class="clearfix"></div>
           <div class="asc-divider divider"></div>
@@ -47,8 +43,13 @@
           <p>You are in the category
             <%= link_to 'Designers', designers_path, {:class => "more-link"} %>
           </p>
-          <p>
-            <%= link_to 'Previous', designer_path(:id), {:class => "asc-button small gray"} %>&nbsp;<strong>……</strong>&nbsp;<%= link_to 'Next', designer_path(:id), {:class => "asc-button small gray"} %></p>
+          <p>    <% if @designer.id > 1 %>
+            <%= link_to 'Previous', designer_about_path(:id => @designer.id-1), {:class => "asc-button small gray"} %>&nbsp;<strong>……</strong>&nbsp;
+              <% end %>
+            <% if @designer.id<@all_designers.size%>
+                <%= link_to 'Next', designer_about_path(:id => @designer.id+1), {:class => "asc-button small gray"} %>
+            <% end %>
+           </p>
           <p>
                 <%= link_to 'All Designers', designers_path, {:class => "asc-button small light"} %>
            </p>
