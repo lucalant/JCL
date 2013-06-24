@@ -1,2 +1,101 @@
-<h1>HomeProducts#new_home_products</h1>
-<p>Find me in app/views/home_products/new_home_products.html.erb</p>
+<body class="page page-id-760 page-template-default logged-in admin-bar custom-background customize-support">
+
+<div id="azure-wrapper">
+  <section id="pre-content">
+    <div class="pre-content-inner">
+      <%= form_for(@home_product) do |f| %>
+          <% if @home_product.errors.any? %>
+              <div id="error">
+                <p><%= pluralize(@home_product.errors.count, "error") %>! Your are not allowed to save this object:</p>
+                <ul>
+                  <% @home_product.errors.full_messages.each do |msg| %>
+                      <li><%= msg %></li>
+                      <%= @home_product.name %>
+                      <%= @home_product.event %>
+                      <%= @home_product.introduction%>
+                      <%= @home_product.text %>
+                      <%= @home_product.category %>
+                      <%= @home_product.room%>
+                      <%= @home_product.top %>
+                      <%= @home_product.partner %>
+                      <%= @home_product.designer %>
+                      <%= @home_product.top_client %>
+                      <%= @home_product.distribution %>
+                  <% end %>
+                </ul>
+              </div>
+          <% end %>
+          <div class="field">
+            <%= f.label :name %><br>
+            <%= f.text_field :name %>
+          </div>
+          <div class="field">
+            <%= f.label :event %><br>
+            <%= f.text_field :event %>
+          </div>
+          <div class="field">
+            <%= f.label :partner %><br>
+            <%= f.text_field :partner %>
+          </div>
+          <div class="field">
+            <%= f.label :top_client %><br>
+            <%= f.text_field :top_client %>
+          </div>
+          <div class="field">
+            <%= f.label :designer %><br>
+            <%= f.text_field :designer %>
+          </div>
+          <div class="field">
+            <%= f.label :introduction %><br>
+            <%= f.text_area :introduction %>
+          </div>
+          <div class="field">
+            <%= f.label :text %><br>
+            <%= f.text_area :text %>
+          </div>
+          <div class="field"><br>
+            <%= f.label :top %>
+            <%= f.check_box :top %>
+          </div>
+          <div class="field"><br>
+            <%= f.label :new %>
+            <%= f.check_box :new %>
+          </div>
+          <div class="field"><br>
+            <%= f.label :created_at %>
+            <%= f.date_select :created_at %>
+          </div>
+          <div class="field"><br>
+            <%= f.label :updated_at %>
+            <%= f.date_select :updated_at %>
+          </div>
+          <div class="field"><br>
+            <%= f.label :room %>
+            <%= f.select :room, ["bedroom", "dining room", "studio", "living room","loft"] %>
+          </div>
+          <div class="field">
+            <%= f.label :images %><br>
+            <%= f.file_field :images %>
+          </div>
+          <div class="field">
+            <%= f.label :category %><br>
+            <%= f.select :category ,["Sofas and Armchairs","Night furniture", "beds", "Closets", "Chairs", "Systems", "Tables","Single Furniture","Lamps","Fittings"] %>
+          </div>
+
+          <div class="actions"><br>
+            <%= f.submit %>
+          </div>
+          <%= link_to "Back to Admin page", pages_admin_path , {:class => "more-link"}%>
+          </div>
+          </section>
+          </div>
+          <!-- end main-container -->
+          </body>
+
+
+
+
+
+
+
+
