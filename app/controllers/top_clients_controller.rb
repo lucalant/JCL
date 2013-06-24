@@ -1,4 +1,5 @@
 class TopClientsController < ApplicationController
+
   def show
   end
 

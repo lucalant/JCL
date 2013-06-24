@@ -7,7 +7,7 @@ class HomeProductsController < ApplicationController
   end
   def products_by_room
     @room = params[:room]
-    @home_product_by_room = HomeProduct.where('room = ?', params[:room])
+    @home_product_by_room = HomeProduct.where('room = ?', @room)
     if @home_product_by_room == nil
       format.html { redirect_to admin_home_product_path, :notice => "We are sorry, but there isn't any product" }
     end
@@ -38,7 +38,7 @@ class HomeProductsController < ApplicationController
     @cat = params[:category]
 
     if @cat
-      @par = HomeProductt.find(@cat)
+      @par = HomeProduct.find(@cat)
       @procat = @par.category
     end
 
@@ -48,24 +48,29 @@ class HomeProductsController < ApplicationController
     end
 
     if @img
-      @par = home_product.find(@img)
+      @par =HomeProduct.find(@img)
       @proimg = @par.images
     end
 
     if @txt
-      @par = home_product.find(@txt)
+      @par = HomeProduct.find(@txt)
       @prodescr = @par.text
     end
 
     if @int
-      @par = home_product.find(@int)
+      @par = HomeProduct.find(@int)
       @prointro = @par.introduction
     end
 
     if @top
-      @par = home_product.find(@top)
+      @par = HomeProduct.find(@top)
       @protop = @par.top
     end
+
+    when @home_product.id >1
+    :id => @home_product.id-1
+
+
 
   end
 
@@ -99,4 +104,14 @@ def home_products_params
   params.require(:name,:introduction,:images,:text,:home_product_id,:room,:top,:type).permit(:eid, :did,:top_client_id,:pid)
 end
 
+def orientation_links
+  if @home_product_by_room.id >1
+end
 
+<% if @designer.id > 1 %>
+<%= link_to 'Previous', designer_about_path(:id => @designer.id-1), {:class => "asc-button small gray"} %>&nbsp;<strong>……</strong>&nbsp;
+              <% end %>
+            <% if @designer.id<@all_designers.size%>
+                <%= link_to 'Next', designer_about_path(:id => @designer.id+1), {:class => "asc-button small gray"} %>
+    <% end %>
+[24/06/13 00:23:31] Julia: e devi mettere @all_designers = Designer.all

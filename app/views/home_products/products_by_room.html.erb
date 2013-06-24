@@ -6,7 +6,6 @@
           <div class = "space-title">
             <h1 span class = "page-title" >
               <%= @room %>
-              products
             </h1>
           </div>
         </div>
@@ -15,29 +14,29 @@
   <section id= "main-container" class ="container" role = "main">
     <div id="main" class ="sixteen columns content">
       <article id="post-576"class ="post-576 page type-page status-publish hentry page-single clearfix" >
+        <div class = "post-content">
+            <span class ="orientation-info"  >
+            <span> You are in
+              <%=  @room  %>  home products </span>
+            </span>
+        </div>
         <%= @home_product_by_room.each do |homeproduct| %>
           <div class="asc-columns one_fourth">
-              <div class = "asc-frame">
+              <div class = "asc-frame ">
                 <span >
-                  <ul class="title">
-                  <%= link_to homeproduct.name, homeproduct_path(homeproduct) %>
+                  <ul class="title ">
+                  <%= link_to homeproduct.name, home_products_path(:id => homeproduct.id),{:class => "more-link"}  %>
                   </ul>
-                  <ul class = "image">
-                    <%=link_to homeproduct_path(homeproduct)%>
-                        <%= image_tag("/homeproduct/#{homeproduct.image_url}") %>
+                  <ul  class="scale-with-grid" >
+                    <%=link_to home_products_path(homeproduct.id)%>
+                       <%= link_to image_tag(homeproduct.images ,  :width =>300 , :height => 174) , home_products_path(homeproduct.id )%>
                   </ul>
                 </span>
               </div>
           </div>
         <%end%>
-        <div class = "post-content">
-            <span class ="orientation info">
-            <p> You are in home products of </p>
-              <span> <%= link_to @room   %> </span>
-            </span>
-        </div>
         <section>
-          <p><%= link_to home_path, {:class => "asc-button small gray"} do%><span> Previous room </span><% end %>&nbsp;<strong>……</strong>&nbsp;
+          <p><%= link_to home_path, {:class => "asc-button small gray"} do%><span> Previous room </span><% end %>&nbsp;<strong></strong>&nbsp;
             <%= link_to home_path, {:class => "asc-button small gray"} do%><span> Next room</span><% end %>
            <%= link_to  room_home_products_path, {:class => "asc-button small gray"} do%> <span>Back to All Rooms</span><%end%></p>
         </section>
