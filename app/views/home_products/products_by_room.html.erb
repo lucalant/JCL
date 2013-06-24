@@ -29,7 +29,8 @@
                   </ul>
                   <ul  class="scale-with-grid" >
                     <%=link_to home_products_path(:id => homeproduct.id,:room => @room, :designer => homeproduct.designer)%>
-                       <%= link_to image_tag(homeproduct.images ,  :width =>300 , :height => 174) , home_products_path(:id => homeproduct.id ,:room => @room,:designer=>homeproduct.designer)%>
+
+                    <%= link_to image_tag(homeproduct.images , :style => "width:250px;height:199px", :class => 'scale-with-grid') , home_products_path(:id => homeproduct.id , :room => @room,:designer=>homeproduct.designer)%>
                   </ul>
                 </span>
               </div>
