@@ -18,12 +18,13 @@
         <div class="asc-frame">
           <p> <%= image_tag (@designerImage) %>  </p>
         </div>
-
+          <% if @events !=nil %>
           <p>Collaborated at
             <%=@events.each do |event|%>
                 <%= link_to event.name, about_event_path(:id => event.id), {:class => "more-link"} %>,
             <% end %>
           </p>
+          <%end%>
 
             <p>Designed <%= link_to 'Home products', designers_home_products_path(:id => @designer.id), {:class => "more-link"} %>
             </p>
@@ -44,7 +45,7 @@
             <%= link_to 'Designers', designers_path, {:class => "more-link"} %>
           </p>
           <p>    <% if @designer.id > 1 %>
-            <%= link_to 'Previous', designer_about_path(:id => @designer.id-1), {:class => "asc-button small gray"} %>&nbsp;<strong>……</strong>&nbsp;
+            <%= link_to 'Previous', designer_about_path(:id => @designer.id-1), {:class => "asc-button small gray"} %>&nbsp;<strong></strong>&nbsp;
               <% end %>
             <% if @designer.id<@all_designers.size%>
                 <%= link_to 'Next', designer_about_path(:id => @designer.id+1), {:class => "asc-button small gray"} %>
