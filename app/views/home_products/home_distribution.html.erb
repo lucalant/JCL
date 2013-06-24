@@ -6,7 +6,7 @@
       <div class="container">
         <div class="sixteen columns">
           <div class="space-title">
-            <h1 span class="page-title"> Distribution points for <%=link_to @home_product,home_products_path(:id => @home_product.id)%></h1>
+            <h1 span class="page-title"> Distribution points for <%=link_to @home_product.name ,home_products_path(:id => @home_product.id)%></h1>
           </div>
         </div>
       </div>
@@ -23,7 +23,7 @@
           <div class="asc-columns ">
             <div class="asc-frame">
               <% @home_product_distr_list.id do |id| %>
-              <p><strong><a class="transition-link" ><span><%= link_to @home_product_distr_list.name, distribution_path(:id => id ) %>&nbsp;</span></a></strong></p>
+              <p><strong><a class="transition-link" ><span><%= link_to id.name, distribution_path(:id => id.home_product_id ) %>&nbsp;</span></a></strong></p>
               <%end%>
             </div>
           </div>

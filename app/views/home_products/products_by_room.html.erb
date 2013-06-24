@@ -25,12 +25,12 @@
               <div class = "asc-frame ">
                 <span >
                   <ul class="title ">
-                  <%= link_to homeproduct.name, home_products_path(:id => homeproduct.id, :room => @room),{:class => "more-link"}  %>
+                  <%= link_to homeproduct.name, home_products_path(:id => homeproduct.id, :room => @room, @designer => homeproduct.designer),{:class => "more-link"}  %>
                   </ul>
                   <ul  class="scale-with-grid" >
 
 
-                    <%= link_to image_tag(homeproduct.images , :style => "width:250px;height:199px", :class => 'scale-with-grid') , home_products_path(:id => homeproduct.id , :room => @room,:designer=>homeproduct.designer)%>
+                    <%= link_to image_tag(homeproduct.images , :style => "width:250px;height:199px", :class => 'scale-with-grid') , home_products_path(:id => homeproduct.id , :room => @room, :designer=> homeproduct.designer )%>
                   </ul>
                 </span>
               </div>

@@ -35,7 +35,7 @@ class DistributionController < ApplicationController
 
   def index
     @distribution = Distribution.find(params[:id])
-    @distributionImage = "/distribution/"+ @distribution.img_url
+    @distributionImage = @distribution.img_url
     @all_distributions = Distribution.all
 
   end
