@@ -29,18 +29,15 @@ class HomeProductsController < ApplicationController
 
   def index
     @home_product = HomeProduct.find(params[:id])
-
     @name =  params[:name]
     @img = params[:images]
     @txt = params[:text]
     @int = params[:introduction]
     @top = params[:top]
     @cat = params[:category]
+    @room = params[:room]
 
-    if @cat
-      @par = HomeProduct.find(@cat)
-      @procat = @par.category
-    end
+
 
     if @name
       @par = HomeProduct.find(@name)
@@ -67,15 +64,100 @@ class HomeProductsController < ApplicationController
       @protop = @par.top
     end
 
-    when @home_product.id >1
-    :id => @home_product.id-1
+
+    @right = case
+               when @room
+                @p = HomeProduct.where('room =?', @room)
+                hash = Hash[@p.map.with_index.to_a]
+                @i = hash[@home_product]
+                @m = @p.count
+
+              if (@i == @m )
+                 @p[0].id
+              else
+                 @p[@i.to_i + 1].id
+
+              end
+
+               when @category
+                 @p = HomeProduct.where('category =?', @category)
+                 hash = Hash[@p.map.with_index.to_a]
+                 @i = hash[@home_product]
+                 @m = @p.count
+
+                 if (@i == @m )
+                   @p[0].id
+                 else
+                   @p[@i.to_i + 1].id
+
+                 end
+             else
+             end
+
+
+
+
+    @left =  case
+                when @room
+                  @p = HomeProduct.where('room =?', @room)
+                  hash = Hash[@p.map.with_index.to_a]
+                  @i = hash[@home_product]
+                  @m = @p.count
+
+                  if  (@i == 0 )
+                     @p[@m - 1].id
+                  else
+                     @p[@i.to_i - 1].id
+                  end
+
+               when @category
+                 @p = HomeProduct.where('category =?', @category)
+                 hash = Hash[@p.map.with_index.to_a]
+                 @i = hash[@home_product]
+                 @m = @p.count
+
+                 if  (@i == 0 )
+                   @p[@m - 1].id
+                 else
+                   @p[@i.to_i - 1].id
+                 end
+              else
+             end
 
 
 
   end
 
-  def all_rooms
 
+
+  def all_rooms
+    @roomList = Array('bedroom','dining room','studio','living room','loft')
+    @roomIndex=case
+                 when @room == 'bedroom'
+                   1
+                 when   @room == 'dining room'
+                   2
+                 when   @room == 'studio'
+                   3
+                 when   @room == 'living room'
+                   4
+                 else
+                   5
+               end
+    if  (@roomIndex == 1 )
+      @rooml = @roomList[5]
+      redirect_to home_product_by_room_path(@rooml)
+    else
+      @rooml = @roomList[@roomIndex- 1]
+      redirect_to home_product_by_room_path(@rooml)
+    end
+    if  (@roomIndex == 5 )
+      @roomr = @roomList[1]
+      redirect_to home_product_by_room_path(@roomr)
+    else
+      @roomr = @roomList[@roomIndex+ 1]
+      redirect_to home_product_by_room_path(@roomr)
+    end
 
   end
 
@@ -104,14 +186,5 @@ def home_products_params
   params.require(:name,:introduction,:images,:text,:home_product_id,:room,:top,:type).permit(:eid, :did,:top_client_id,:pid)
 end
 
-def orientation_links
-  if @home_product_by_room.id >1
-end
 
-<% if @designer.id > 1 %>
-<%= link_to 'Previous', designer_about_path(:id => @designer.id-1), {:class => "asc-button small gray"} %>&nbsp;<strong>……</strong>&nbsp;
-              <% end %>
-            <% if @designer.id<@all_designers.size%>
-                <%= link_to 'Next', designer_about_path(:id => @designer.id+1), {:class => "asc-button small gray"} %>
-    <% end %>
-[24/06/13 00:23:31] Julia: e devi mettere @all_designers = Designer.all
+
