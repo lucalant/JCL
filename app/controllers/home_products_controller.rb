@@ -149,7 +149,7 @@ class HomeProductsController < ApplicationController
 
 
   def new_home_products
-    @home_product = HomeProductProduct.new
+    @home_product = HomeProduct.new
     respond_to do |format|
       format.html
       format.json { render :json => @home_product }
