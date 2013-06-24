@@ -19,7 +19,7 @@
 
         <%=@all_designers.each do |designer|%>
             <%= link_to designer_about_path(:id => designer.id), {:class => "more-link"} do%>
-                <p>designer.name designer.surname</p></br>
+                <p><%=designer.name%> <%=designer.surname%></p></br>
                 <p> <%= image_tag (designer.img_url) %>  </p>
             <% end %>
         <% end %>
