@@ -48,6 +48,7 @@ class HomeProductsController < ApplicationController
     @top = params[:top]
     @cat = params[:category]
     @room = params[:room]
+    @designer = params[:designer]
 
 
 

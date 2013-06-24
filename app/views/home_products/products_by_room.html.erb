@@ -28,8 +28,8 @@
                   <%= link_to homeproduct.name, home_products_path(:id => homeproduct.id, :room => @room),{:class => "more-link"}  %>
                   </ul>
                   <ul  class="scale-with-grid" >
-                    <%=link_to home_products_path(:id => homeproduct.id)%>
-                       <%= link_to image_tag(homeproduct.images ,  :width =>300 , :height => 174) , home_products_path(:id => homeproduct.id )%>
+                    <%=link_to home_products_path(:id => homeproduct.id,:room => @room, :designer => homeproduct.designer)%>
+                       <%= link_to image_tag(homeproduct.images ,  :width =>300 , :height => 174) , home_products_path(:id => homeproduct.id ,:room => @room,:designer=>homeproduct.designer)%>
                   </ul>
                 </span>
               </div>
