@@ -37,12 +37,13 @@
           </div>
           <div class="clearfix"></div>
           <div class="asc-divider divider"></div>
-          <% if @designer %>
-          <p> Realised by <a class="more-link"><span><span style="color: red; font-size: 13px; line-height: 19px;">&nbsp<%= @hdesigner %> &nbsp;</span></span></a></p>
-          <% end %>
 
+          <p> Realised by <a class="more-link"><span><span style="color: red; font-size: 13px; line-height: 19px;">&nbsp<%= @home_product.designer %> &nbsp;</span></span></a></p>
+
+          <div class="clearfix"></div>
+          <div class="asc-divider divider"></div>
           <p><a class="more-link"><span>&nbsp;<span style="color: red; font-size: 13px; line-height: 19px;"><%=link_to "Where to buy it",home_product_distribution_path(:id => @home_product.id) %> </span> </span></a></p>
-          <% if @home_product.event %>
+          <% if @home_product.event%>
           <p>Presented at <a class="more-link" ><span><span style="color: red; font-size: 13px; line-height: 19px;"> <%= @home_product.event %> </span> </span></a> </p>
           <% end%>
           <div class="clearfix"></div>

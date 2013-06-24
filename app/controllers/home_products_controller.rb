@@ -50,6 +50,10 @@ class HomeProductsController < ApplicationController
     @room = params[:room]
     @designer = params[:designer]
 
+    if @designer
+      @par = HomeProduct.find(@designer)
+      @prodesigner = @par.name
+    end
 
 
     if @name
