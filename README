@@ -1,1 +1,35 @@
-This file was created by JetBrains RubyMine 5.4.2 for binding GitHub repository
+Pages:
+
+-Home  http://localhost:3000/home
+
+-Company history    http://localhost:3000/history
+
+-Company identity   http://localhost:3000/identity
+
+-Menu - Designers (list of all designers   - http://localhost:3000/designer)
+
+-Page of the designer(http://localhost:3000/designer_about?id=1)
+
+-Page of distribution (http://localhost:3000/distribution?id=1)
+
+-Map of distribution(http://localhost:3000/distribution/map?id=1)
+
+-http://localhost:3000/designers_home_products?id=1
+
+-http://localhost:3000/designers_workspaces?id=1
+
+-http://localhost:3000/distributions_home_products?id=1
+
+-http://localhost:3000/distributions_workspaces?id=1
+
+-http://localhost:3000/room_home_products
+
+-http://localhost:3000/all_top_clients
+
+-http://localhost:3000/home_products_by_room?room=living+room
+
+-http://localhost:3000/type_home_products
+
+-http://localhost:3000/home_products?id=3&room=living+room 
+
+
