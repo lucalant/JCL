@@ -84,12 +84,14 @@ ActiveRecord::Schema.define(version: 20130624003328) do
     t.string   "introduction"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.boolean  "top",           default: false,            null: false
-    t.string   "name",          default: "name",           null: false
-    t.string   "partner_event", default: "partner_client", null: false
-    t.string   "top_client",    default: "top_client",     null: false
-    t.string   "category",      default: "category",       null: false
+    t.boolean  "top",                       default: false,            null: false
+    t.string   "name",                      default: "name",           null: false
+    t.string   "partner_event",             default: "partner_client", null: false
+    t.string   "top_client",                default: "top_client",     null: false
+    t.string   "category",                  default: "category",       null: false
     t.string   "room"
+    t.string   "event",         limit: nil
+    t.string   "designer",      limit: nil
   end
 
   create_table "home_products_designers", force: true do |t|
