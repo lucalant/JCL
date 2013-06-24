@@ -37,18 +37,18 @@
           </div>
           <div class="clearfix"></div>
           <div class="asc-divider divider"></div>
-           <%if @designer != nil %>
-          <p> Realised by <a class="more-link"><span><span style="color: red; font-size: 13px; line-height: 19px;">&nbsp<%= @home_product.designer %> &nbsp;</span></span></a></p>
+           <%if @designer != 'nil' %>
+          <p> Realised by <a class="more-link"><span><span style="color: red; font-size: 13px; line-height: 19px;">&nbsp<%= link_to @designer, designer_about_path(:id => @did) %> &nbsp;</span></span></a></p>
            <%end%>
           <div class="clearfix"></div>
           <div class="asc-divider divider"></div>
           <p><a class="more-link"><span>&nbsp;<span style="color: red; font-size: 13px; line-height: 19px;"><%=link_to "Where to buy it",home_product_distribution_path(:id => @home_product.id) %> </span> </span></a></p>
-          <% if @event !=nil %>
-          <p>Presented at <a class="more-link" ><span><span style="color: red; font-size: 13px; line-height: 19px;"> <%= @home_product.event %> </span> </span></a> </p>
+          <% if @eventName !='nil' %>
+          <p>Presented at <a class="more-link" ><span><span style="color: red; font-size: 13px; line-height: 19px;"> <%= link_to @event, about_event_path(:id => @eid) %> </span> </span></a> </p>
           <% end%>
           <div class="clearfix"></div>
           <div class="asc-divider divider"></div>
-          <span>You are in the category<a class="more-link"><span>&nbsp;<span style="color:#ccffcc;"><%=link_to @home_product.category,home_products_by_type_path(:id => @home_product.id ,:category => @home_product.category)%> </span></span></a>
+          <span>You are in the category<a class="more-link"><span>&nbsp;<span style="color:#ccffcc;"><%= link_to @home_product.category,home_products_by_type_path(:id => @home_product.id ,:category => @home_product.category)%> </span></span></a>
         </span>&nbsp;</span></a>&nbsp;in&nbsp;<a class="more-link"><span>&nbsp;<span style="color:#ccffcc;">Home Products </span>&nbsp;</span></a></p> </span>
           <div class="clearfix"></div>
           <div class="asc-divider divider"></div>
@@ -58,17 +58,13 @@
         <div class="asc-columns one_half last">
           <%= @home_product.introduction %>
           <table border="0" cellspacing="10" cellpadding="0">
-            <colgroup>
-              <col>
+              <p>
               <%= @home_product.text %>
-              <col></colgroup>
-            <% @home_product.text do |detail|  %>
-            <tbody>
-                <col>
-                <tr>
-                <td align="left" valign="top"> <%= detail %>:</td>
-                </tr>
-                </col>
+              </p>
+              <% @home_product.text do |detail|  %>
+              <td align="left" valign="top"> <%= detail %>:</td>
+              <div class="clearfix"></div>
+
             </tbody>
             <%end%>
           </table>

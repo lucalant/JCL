@@ -50,7 +50,10 @@ class HomeProductsController < ApplicationController
     @cat = params[:category]
     @room = params[:room]
 
-    #@designerId = hash[@designer]
+    @eventName = @home_product.event
+    @designer = @home_product.designer
+    @did = Designer.where('name = '+' surname = ?', @designer)
+    @eid = Event.where('name = ?', @eventName)
 
     if @designer
       @par = HomeProduct.find(@designer)
