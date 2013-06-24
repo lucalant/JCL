@@ -1,2 +1,44 @@
-<h1>HomeProducts#all_types</h1>
-<p>Find me in app/views/home_products/all_types.html.erb</p>
+<body class="page page-id-760 page-template-default logged-in admin-bar custom-background customize-support">
+
+<div id="azure-wrapper">
+  <section id="pre-content">
+    <div class="pre-content-inner">
+      <div class="container">
+        <div class="sixteen columns">
+          <div class="space-title">
+            <h1 class="page-title"> Select a category to see the related products : </h1>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- main-container -->
+  <section id="main-container" class="container" role="main">
+    <div id="main" class="sixteen columns content">
+
+      <!-- post entry -->
+      <article id="post-760" class="post-760 page type-page status-publish hentry page-single clearfix">
+        <div class="transition-content">
+          <div class="asc-columns ">
+            <div class="asc-frame">
+              <p><strong><a class="transition-link" ><span><%= link_to 'Sofas and Armchairs', home_products_by_type_path(:category => "Sofas and Armchairs") %>&nbsp;</span></a></strong></p>
+              <p><strong><a class="transition-link" ><span><%= link_to 'Night Furniture', home_products_by_type_path,{:category =>"Night Furniture"} %>&nbsp;</span></a></strong></p>
+              <p><strong><a class="transition-link" ><span><%= link_to 'Beds', home_products_by_type_path,{:category =>"Studio"} %>&nbsp;</span></a></strong></p>
+              <p><strong><a class="transition-link" ><span><%= link_to 'Closets', home_products_by_type_path(:category => 'Closets') %>&nbsp;</span></a></strong></p>
+              <p><strong><a class="transition-link" ><span><%= link_to 'Chairs', home_products_by_type_path,{:category =>"Chairs"} %>&nbsp;</span></a></strong></p>
+              <p><strong><a class="transition-link" ><span><%= link_to 'Systems', home_products_by_type_path,{:category =>"Systems"} %>&nbsp;</span></a></strong></p>
+              <p><strong><a class="transition-link" ><span><%= link_to 'Tables', home_products_by_type_path,{:category =>"Tables"} %>&nbsp;</span></a></strong></p>
+              <p><strong><a class="transition-link" ><span><%= link_to 'Single Furniture', home_products_by_type_path,{:category =>"Single Furniture"} %>&nbsp;</span></a></strong></p>
+              <p><strong><a class="transition-link" ><span><%= link_to 'Lamps', home_products_by_type_path,{:category =>"Lamps"} %>&nbsp;</span></a></strong></p>
+              <p><strong><a class="transition-link" ><span><%= link_to 'Fittings', home_products_by_type_path,{:category =>"Fittings"} %>&nbsp;</span></a></strong></p>
+            </div>
+          </div>
+        </div>
+      </article>
+      <!-- end post entry -->
+    </div>
+  </section>
+</div>
+<!-- end main-container -->
+</body>

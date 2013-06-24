@@ -1,2 +1,45 @@
-<h1>HomeProducts#home_products_by_type</h1>
-<p>Find me in app/views/home_products/home_products_by_type.html.erb</p>
+
+<section id="pre-content">
+  <div class = "pre-content-inner">
+    <div class = "container">
+      <div class = "sixteen columns">
+        <div class = "space-title">
+          <h1 span class = "page-title" >
+            <%= @category %>
+          </h1>
+        </div>
+      </div>
+    </div>
+  </div>
+  <section id= "main-container" class ="container" role = "main">
+    <div id="main" class ="sixteen columns content">
+      <article id="post-576"class ="post-576 page type-page status-publish hentry page-single clearfix" >
+        <div class = "post-content">
+            <span class ="orientation-info"  >
+            <span> You are in home products<%=@category  %>  </span>
+            </span>
+        </div>
+        <%= @home_product_by_type.each do |homeproduct| %>
+            <div class="asc-columns one_fourth">
+              <div class = "asc-frame ">
+                <span >
+                  <ul class="title ">
+                    <%= link_to homeproduct.name, home_products_path(:id => homeproduct.id, :category => @category),{:class => "more-link"}  %>
+                  </ul>
+                  <ul  class="scale-with-grid" >
+                    <%=link_to home_products_path(:id => homeproduct.id)%>
+                    <%= link_to image_tag(homeproduct.images ,  :width =>300 , :height => 174) , home_products_path(:id => homeproduct.id )%>
+                  </ul>
+                </span>
+              </div>
+            </div>
+        <%end%>
+        <section>
+
+          <%= link_to  type_home_products_path, {:class => "asc-button small gray"} do%> <span>Back to all Categories</span><%end%>
+        </section>
+      </article>
+    </div>
+  </section>
+
+</section>

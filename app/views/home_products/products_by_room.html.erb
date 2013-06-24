@@ -25,20 +25,18 @@
               <div class = "asc-frame ">
                 <span >
                   <ul class="title ">
-                  <%= link_to homeproduct.name, home_products_path(:id => homeproduct.id),{:class => "more-link"}  %>
+                  <%= link_to homeproduct.name, home_products_path(:id => homeproduct.id, :room => @room),{:class => "more-link"}  %>
                   </ul>
                   <ul  class="scale-with-grid" >
-                    <%=link_to home_products_path(homeproduct.id)%>
-                       <%= link_to image_tag(homeproduct.images ,  :width =>300 , :height => 174) , home_products_path(homeproduct.id )%>
+                    <%=link_to home_products_path(:id => homeproduct.id)%>
+                       <%= link_to image_tag(homeproduct.images ,  :width =>300 , :height => 174) , home_products_path(:id => homeproduct.id )%>
                   </ul>
                 </span>
               </div>
           </div>
         <%end%>
         <section>
-          <p><%= link_to home_path, {:class => "asc-button small gray"} do%><span> Previous room </span><% end %>&nbsp;<strong></strong>&nbsp;
-            <%= link_to home_path, {:class => "asc-button small gray"} do%><span> Next room</span><% end %>
-           <%= link_to  room_home_products_path, {:class => "asc-button small gray"} do%> <span>Back to All Rooms</span><%end%></p>
+           <%= link_to  room_home_products_path, {:class => "asc-button small gray"} do%> <span>Back to all Rooms</span><%end%>
         </section>
       </article>
     </div>

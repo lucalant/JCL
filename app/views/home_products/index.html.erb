@@ -10,7 +10,7 @@
 
       <div class="sixteen columns">
         <div class="space-title">
-          <h1 class="page-title"> <%= @home_product.category + @home_product.name  %></h1>
+          <h1 class="page-title"> <%= @home_product.category + " : "+ @home_product.name  %></h1>
 
         </div>
       </div>
@@ -35,30 +35,32 @@
           <div class="asc-frame">
             <p img class="size-medium wp-image-435 alignnone" alt="work-5" width="300" height="174"><%= image_tag(@home_product.images) %></p>
           </div>
-          <% if (@home_product.designer ) %>
+          <% if (@home_product.designer != nil) %>
           <p>Realised by <a class="more-link"><span><span style="color: red; font-size: 13px; line-height: 19px;">&nbsp<%= @home_product.designer %> &nbsp;</span></span></a></p>
           <% end %>
 
           <p><a class="more-link" href="#"><span>&nbsp;<span style="color: red; font-size: 13px; line-height: 19px;">Where to buy it</span> </span></a></p>
-          <% if (@home_product.event ) %>
+          <% if (@home_product.event)%>
           <p>Presented at <a class="more-link" ><span><span style="color: red; font-size: 13px; line-height: 19px;"> Event <%= @home_product.event %> </span> </span></a> </p>
           <% end%>
           <div class="clearfix"></div>
           <div class="asc-divider divider"></div>
-          <p>You are in the category <a class="more-link" ><span>&nbsp;<span style="color: #ccffcc;"><%= link_to @home_product.category %>></span>&nbsp;</span></a>, &nbsp;in &nbsp;<a class="more-link" ><span>&nbsp;<span style="color: #ccffcc;"> <%= link_to "Home Products" , home_product%> </span>&nbsp;</span></a></p>
-          <p><a  class="asc-button small gray"><span> <%= link_to "Previous", %> </span></a> <strong>……</strong> <a  class="asc-button small gray"><span> <%= link_to "Next", %></span></a></p>
-          <p><a  class="asc-button small light"><span> <%= link_to @home_product.category %> </span></a></p>
+          <span>You are in the category<a class="more-link"><span>&nbsp;<span style="color:#ccffcc;"><%=link_to @home_product.category,home_products_by_type_path(:id => @home_product.id ,:category => @home_product.category)%> </span></span></a>
+        </span>&nbsp;</span></a>&nbsp;in&nbsp;<a class="more-link"><span>&nbsp;<span style="color:#ccffcc;">Home Products </span>&nbsp;</span></a></p> </span>
+          <p><a  class="asc-button small gray"><span> <%= link_to "Previous", home_products_path(:id => @left , :room => @home_product.room)%> </span></a> <strong></strong> <a  class="asc-button small gray"><span> <%= link_to "Next",home_products_path(:id => @right,:room=> @home_product.room) %></span></a></p>
+          <p><a  class="asc-button small light"><span> <%= link_to @home_product.category, home_products_by_type_path(:id => @home_product.id ,:category => @home_product.category) %> </span></a></p></span>
         </div>
         <div class="asc-columns one_half last">
           <%= @home_product.introduction %>
           <table border="0" cellspacing="10" cellpadding="0">
             <colgroup>
               <col>
+              <%= @home_product.text %>
               <col></colgroup>
-            <% @home_product.text.each do |detail|  %>
+            <% @home_product.text do |detail|  %>
             <tbody>
                 <tr>
-                <td align="left" valign="top"> <% detail %>:</td>
+                <td align="left" valign="top"> <%= detail %>:</td>
                 </tr>
             </tbody>
             <%end%>
