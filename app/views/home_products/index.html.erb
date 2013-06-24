@@ -45,10 +45,10 @@
           <% end%>
           <div class="clearfix"></div>
           <div class="asc-divider divider"></div>
-          <span>You are in the category<a class="more-link"><span>&nbsp;<span style="color:#ccffcc;"><%=link_to @home_product.category,home_products_by_type_path(:id => @home_product.id ,:category => @home_product.category)%> </span></a></p>
-        </div>%>></span>&nbsp;</span></a>&nbsp;in&nbsp;<a class="more-link"><span>&nbsp;<span style="color:#ccffcc;">Home Products </span>&nbsp;</span></a></p> </span>
+          <span>You are in the category<a class="more-link"><span>&nbsp;<span style="color:#ccffcc;"><%=link_to @home_product.category,home_products_by_type_path(:id => @home_product.id ,:category => @home_product.category)%> </span></span></a>
+        </span>&nbsp;</span></a>&nbsp;in&nbsp;<a class="more-link"><span>&nbsp;<span style="color:#ccffcc;">Home Products </span>&nbsp;</span></a></p> </span>
           <p><a  class="asc-button small gray"><span> <%= link_to "Previous", home_products_path(:id => @left , :room => @home_product.room)%> </span></a> <strong></strong> <a  class="asc-button small gray"><span> <%= link_to "Next",home_products_path(:id => @right,:room=> @home_product.room) %></span></a></p>
-          <p><a  class="asc-button small light"><span> <%= link_to @home_product.category, home_products_by_type_path(:id => @home_product.id ,:category => @home_product.category) %> </span></a></p>
+          <p><a  class="asc-button small light"><span> <%= link_to @home_product.category, home_products_by_type_path(:id => @home_product.id ,:category => @home_product.category) %> </span></a></p></span>
         </div>
         <div class="asc-columns one_half last">
           <%= @home_product.introduction %>

@@ -9,14 +9,17 @@ class HomeProductsController < ApplicationController
     @room = params[:room]
     @home_product_by_room = HomeProduct.where('room = ?', @room)
     if @home_product_by_room == nil
-      format.html { redirect_to admin_home_product_path, :notice => "We are sorry, but there isn't any product" }
+      format.html { redirect_to room_home_products_path, :notice => "We are sorry, but there isn't any product in this room" }
     end
 
   end
 
   def home_products_by_type
-    @product_type = params[:type]
-    @home_product_by_type = HomeProduct.where('type = ?', @product_type).order('title ASC')
+    @category = params[:category]
+    @home_product_by_type = HomeProduct.where('type = ?', @category).order('title ASC')
+    if @home_product_by_room == nil
+      format.html { redirect_to type_home_products_path, :notice => "We are sorry, but there isn't any product in this category" }
+    end
 
   end
 
